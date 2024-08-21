@@ -1,3 +1,4 @@
+import 'package:app/screens/symptoms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:app/screens/main_menu.dart';
@@ -5,6 +6,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
   primarySwatch: Colors.pink,
+  appBarTheme: AppBarTheme(
+    backgroundColor: const Color.fromARGB(255, 247, 140, 154),
+    titleTextStyle: GoogleFonts.inter(
+      fontSize: 36,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.italic,
+      color: Colors.white,
+    ),
+    centerTitle: true,
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -58,6 +69,7 @@ void main() {
     runApp(
       MaterialApp(
         theme: theme,
+        //home: const MainMenu(),
         home: const MainMenu(),
       ),
     );

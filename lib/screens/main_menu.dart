@@ -1,3 +1,4 @@
+import 'package:app/screens/symptoms.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/option_button.dart';
 
@@ -34,19 +35,19 @@ class MainMenu extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 const SizedBox(height: 10),
-                OptionButton(
+                const OptionButton(
                   text: 'Nosotros',
-                  onTap: () {}, //Change Screen
+                  screen: MainMenu(), //Change Screen!!
                 ),
                 const SizedBox(height: 15),
-                OptionButton(
+                const OptionButton(
                   text: 'Recomendaciones',
-                  onTap: () {}, //Change Screen
+                  screen: MainMenu(), //Change Screen!!
                 ),
                 const SizedBox(height: 15),
-                OptionButton(
+                const OptionButton(
                   text: 'Tipos de Diagnósticos',
-                  onTap: () {}, //Change Screen
+                  screen: MainMenu(), //Change Screen!!
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -54,9 +55,9 @@ class MainMenu extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 const SizedBox(height: 10),
-                OptionButton(
+                const OptionButton(
                   text: 'Realizar Prueba de Síntomas',
-                  onTap: () {}, //Change Screen
+                  screen: Symptoms(),
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -64,14 +65,14 @@ class MainMenu extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 const SizedBox(height: 10),
-                OptionButton(
+                const OptionButton(
                   text: 'Realziar Prueba de Exudado',
-                  onTap: () {}, //Change Screen
+                  screen: MainMenu(), //Change Screen!!
                 ),
                 const SizedBox(height: 15),
-                OptionButton(
+                const OptionButton(
                   text: 'Realziar Prueba PCR',
-                  onTap: () {}, //Change Screen
+                  screen: MainMenu(), //Change Screen!!
                 ),
                 const SizedBox(height: 15),
               ],

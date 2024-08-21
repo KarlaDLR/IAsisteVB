@@ -4,18 +4,24 @@ class OptionButton extends StatelessWidget {
   const OptionButton({
     super.key,
     required this.text,
-    required this.onTap,
+    required this.screen,
   });
 
   final String text;
-  final void Function() onTap;
+  final Widget screen;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: onTap,
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => screen,
+              ));
+        },
         child: Text(text),
       ),
     );
