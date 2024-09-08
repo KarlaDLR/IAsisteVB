@@ -54,7 +54,17 @@ final theme = ThemeData(
       fontSize: 16,
       color: Colors.black,
     ),
-    //Anteriormente bodylarge
+    titleMedium: GoogleFonts.assistant(
+      fontSize: 17.5,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    titleLarge: GoogleFonts.assistant(
+      fontSize: 18.5,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    //Anteriormente bodylarge -> Valor de entrada en los text Field
     headlineMedium: GoogleFonts.inter(
       fontSize: 20,
       fontStyle: FontStyle.italic,
@@ -70,10 +80,10 @@ final theme = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: GoogleFonts.assistant(
-      fontSize: 14,
+      fontSize: 15,
     ),
     hintStyle: GoogleFonts.assistant(
-      fontSize: 14,
+      fontSize: 15,
     ),
   ),
 );

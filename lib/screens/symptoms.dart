@@ -1,3 +1,4 @@
+import 'package:app/main.dart';
 import 'package:app/screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +44,9 @@ class _Symptoms extends State<Symptoms> {
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 'Información general',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
@@ -144,10 +145,9 @@ class _Symptoms extends State<Symptoms> {
                 ],
               ),
               //const SizedBox(height: 10),
-              const Text(
+              Text(
                 'Padecimientos',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 20),
               Row(
@@ -280,10 +280,9 @@ class _Symptoms extends State<Symptoms> {
                   )
                 ],
               ),
-              const Text(
+              Text(
                 'Síntomas',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               Row(
                 children: [

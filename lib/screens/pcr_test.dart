@@ -29,9 +29,9 @@ class _PcrTest extends State<PcrTest> {
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 'Indicadores presentes',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
@@ -86,9 +86,9 @@ class _PcrTest extends State<PcrTest> {
                 //validator: (value) {}, Corroborar valor válido acorde a la entrada
               ),
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 'Siglas',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 10),
               const Row(
