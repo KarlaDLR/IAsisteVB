@@ -1,4 +1,4 @@
-import 'package:app/screens/symptoms.dart';
+import 'package:app/screens/results.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:app/screens/main_menu.dart';
@@ -54,11 +54,26 @@ final theme = ThemeData(
       fontSize: 16,
       color: Colors.black,
     ),
-    bodyLarge: GoogleFonts.inter(
+    //Anteriormente bodylarge
+    headlineMedium: GoogleFonts.inter(
       fontSize: 20,
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.bold,
       color: const Color.fromARGB(255, 111, 33, 44),
+    ),
+    headlineLarge: GoogleFonts.inter(
+      fontSize: 28,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.bold,
+      color: const Color.fromARGB(255, 111, 33, 44),
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    labelStyle: GoogleFonts.assistant(
+      fontSize: 14,
+    ),
+    hintStyle: GoogleFonts.assistant(
+      fontSize: 14,
     ),
   ),
 );

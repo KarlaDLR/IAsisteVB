@@ -1,3 +1,6 @@
+import 'package:app/screens/exudate.dart';
+import 'package:app/screens/pcr_test.dart';
+import 'package:app/screens/privacy_politics.dart';
 import 'package:app/screens/symptoms.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/option_button.dart';
@@ -15,7 +18,7 @@ class MainMenu extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.all(10),
             child: Column(
               //mainAxisSize: MainAxisSize.min,
               children: [
@@ -23,6 +26,7 @@ class MainMenu extends StatelessWidget {
                 const SizedBox(height: 30),
                 const Text(
                   '“Tu aliado en el diagnóstico de la Vaginosis Bacteriana”',
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
                 const Text(
@@ -32,7 +36,7 @@ class MainMenu extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   'Información',
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(height: 10),
                 const OptionButton(
@@ -46,13 +50,13 @@ class MainMenu extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 const OptionButton(
-                  text: 'Tipos de Diagnósticos',
-                  screen: MainMenu(), //Change Screen!!
+                  text: 'Políticas de uso',
+                  screen: PrivacyPolitics(),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'Diagnóstico clínico',
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(height: 10),
                 const OptionButton(
@@ -62,17 +66,17 @@ class MainMenu extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Diagnóstico de laboratorio',
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(height: 10),
                 const OptionButton(
                   text: 'Realziar Prueba de Exudado',
-                  screen: MainMenu(), //Change Screen!!
+                  screen: Exudate(),
                 ),
                 const SizedBox(height: 15),
                 const OptionButton(
                   text: 'Realziar Prueba PCR',
-                  screen: MainMenu(), //Change Screen!!
+                  screen: PcrTest(),
                 ),
                 const SizedBox(height: 15),
               ],

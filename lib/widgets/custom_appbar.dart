@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomAppbar {
   static AppBar build(BuildContext context) {
     return AppBar(
-      title: const Text('IASisteVB'),
+      title: const Text('IAsisteVB'),
       actions: [
         IconButton(
           onPressed: () {
