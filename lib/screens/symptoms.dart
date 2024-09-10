@@ -144,6 +144,20 @@ class _Symptoms extends State<Symptoms> {
                         )
                       ],
                     ),
+                    Column(
+                      children: [
+                        const Text('No sé'),
+                        Radio<String>(
+                          value: 'douches_dont_know',
+                          groupValue: _douches,
+                          onChanged: (value) {
+                            setState(() {
+                              _douches = value;
+                            });
+                          },
+                        )
+                      ],
+                    ),
                   ],
                 ),
                 //const SizedBox(height: 10),
@@ -184,6 +198,20 @@ class _Symptoms extends State<Symptoms> {
                         )
                       ],
                     ),
+                    Column(
+                      children: [
+                        const Text('No sé'),
+                        Radio<String>(
+                          value: 'hypercholeteremia_dont_know',
+                          groupValue: _hypercholeteremia,
+                          onChanged: (value) {
+                            setState(() {
+                              _hypercholeteremia = value;
+                            });
+                          },
+                        )
+                      ],
+                    ),
                   ],
                 ),
                 Row(
@@ -201,6 +229,15 @@ class _Symptoms extends State<Symptoms> {
                     ),
                     Radio<String>(
                       value: 'hypertension_false',
+                      groupValue: _hypertension,
+                      onChanged: (value) {
+                        setState(() {
+                          _hypertension = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'hypertension_dont_know',
                       groupValue: _hypertension,
                       onChanged: (value) {
                         setState(() {
@@ -231,7 +268,16 @@ class _Symptoms extends State<Symptoms> {
                           _hypothyroidism = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'hypothyroidism_dont_know',
+                      groupValue: _hypothyroidism,
+                      onChanged: (value) {
+                        setState(() {
+                          _hypothyroidism = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -255,7 +301,16 @@ class _Symptoms extends State<Symptoms> {
                           _hyperthyroidism = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'hyperthyroidism_dont_know',
+                      groupValue: _hyperthyroidism,
+                      onChanged: (value) {
+                        setState(() {
+                          _hyperthyroidism = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -279,7 +334,16 @@ class _Symptoms extends State<Symptoms> {
                           _std = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'std_dont_know',
+                      groupValue: _std,
+                      onChanged: (value) {
+                        setState(() {
+                          _std = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Text(
@@ -318,6 +382,20 @@ class _Symptoms extends State<Symptoms> {
                         )
                       ],
                     ),
+                    Column(
+                      children: [
+                        const Text('No sé'),
+                        Radio<String>(
+                          value: 'itching_dont_know',
+                          groupValue: _itching,
+                          onChanged: (value) {
+                            setState(() {
+                              _itching = value;
+                            });
+                          },
+                        )
+                      ],
+                    ),
                   ],
                 ),
                 Row(
@@ -341,7 +419,16 @@ class _Symptoms extends State<Symptoms> {
                           _irritation = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'irritation_dont_know',
+                      groupValue: _irritation,
+                      onChanged: (value) {
+                        setState(() {
+                          _irritation = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -365,7 +452,16 @@ class _Symptoms extends State<Symptoms> {
                           _discharge = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'discharge_dont_know',
+                      groupValue: _discharge,
+                      onChanged: (value) {
+                        setState(() {
+                          _discharge = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -389,7 +485,16 @@ class _Symptoms extends State<Symptoms> {
                           _stink = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'stink_dont_know',
+                      groupValue: _stink,
+                      onChanged: (value) {
+                        setState(() {
+                          _stink = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -413,7 +518,16 @@ class _Symptoms extends State<Symptoms> {
                           _pain = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'pain_dont_know',
+                      groupValue: _pain,
+                      onChanged: (value) {
+                        setState(() {
+                          _pain = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -437,7 +551,16 @@ class _Symptoms extends State<Symptoms> {
                           _ardour = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'ardour_dont_know',
+                      groupValue: _ardour,
+                      onChanged: (value) {
+                        setState(() {
+                          _ardour = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 Row(
@@ -461,7 +584,16 @@ class _Symptoms extends State<Symptoms> {
                           _dyspareunia = value;
                         });
                       },
-                    )
+                    ),
+                    Radio<String>(
+                      value: 'dyspareunia_dont_know',
+                      groupValue: _dyspareunia,
+                      onChanged: (value) {
+                        setState(() {
+                          _dyspareunia = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
                 ElevatedButton(

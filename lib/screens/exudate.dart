@@ -77,69 +77,85 @@ class _Exudate extends State<Exudate> {
                         )
                       ],
                     ),
+                    Column(
+                      children: [
+                        const Text('No sé'),
+                        Radio<String>(
+                          value: 'ct_dont_know',
+                          groupValue: _ct,
+                          onChanged: (value) {
+                            setState(() {
+                              _ct = value;
+                            });
+                          },
+                        )
+                      ],
+                    ),
                   ],
                 ),
                 Row(
                   children: [
                     const Text('HSV'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'hsv_true',
-                          groupValue: _hsv,
-                          onChanged: (value) {
-                            setState(() {
-                              _hsv = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'hsv_true',
+                      groupValue: _hsv,
+                      onChanged: (value) {
+                        setState(() {
+                          _hsv = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'hsv_false',
-                          groupValue: _hsv,
-                          onChanged: (value) {
-                            setState(() {
-                              _hsv = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'hsv_false',
+                      groupValue: _hsv,
+                      onChanged: (value) {
+                        setState(() {
+                          _hsv = value;
+                        });
+                      },
                     ),
+                    Radio<String>(
+                      value: 'hsv_dont_know',
+                      groupValue: _hsv,
+                      onChanged: (value) {
+                        setState(() {
+                          _hsv = value;
+                        });
+                      },
+                    )
                   ],
                 ),
                 Row(
                   children: [
                     const Text('Mg'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'mg_true',
-                          groupValue: _mg,
-                          onChanged: (value) {
-                            setState(() {
-                              _mg = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'mg_true',
+                      groupValue: _mg,
+                      onChanged: (value) {
+                        setState(() {
+                          _mg = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'mg_false',
-                          groupValue: _mg,
-                          onChanged: (value) {
-                            setState(() {
-                              _mg = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'mg_false',
+                      groupValue: _mg,
+                      onChanged: (value) {
+                        setState(() {
+                          _mg = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'mg_dont_know',
+                      groupValue: _mg,
+                      onChanged: (value) {
+                        setState(() {
+                          _mg = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -147,31 +163,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('Mh'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'mh_true',
-                          groupValue: _mh,
-                          onChanged: (value) {
-                            setState(() {
-                              _mh = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'mh_true',
+                      groupValue: _mh,
+                      onChanged: (value) {
+                        setState(() {
+                          _mh = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'mh_false',
-                          groupValue: _mh,
-                          onChanged: (value) {
-                            setState(() {
-                              _mh = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'mh_false',
+                      groupValue: _mh,
+                      onChanged: (value) {
+                        setState(() {
+                          _mh = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'mh_dont_know',
+                      groupValue: _mh,
+                      onChanged: (value) {
+                        setState(() {
+                          _mh = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -179,31 +196,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('Up'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'up_true',
-                          groupValue: _up,
-                          onChanged: (value) {
-                            setState(() {
-                              _up = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'up_true',
+                      groupValue: _up,
+                      onChanged: (value) {
+                        setState(() {
+                          _up = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'up_false',
-                          groupValue: _up,
-                          onChanged: (value) {
-                            setState(() {
-                              _up = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'up_false',
+                      groupValue: _up,
+                      onChanged: (value) {
+                        setState(() {
+                          _up = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'up_dont_know',
+                      groupValue: _up,
+                      onChanged: (value) {
+                        setState(() {
+                          _up = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -211,31 +229,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('Uu'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'uu_true',
-                          groupValue: _uu,
-                          onChanged: (value) {
-                            setState(() {
-                              _uu = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'uu_true',
+                      groupValue: _uu,
+                      onChanged: (value) {
+                        setState(() {
+                          _uu = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'uu_false',
-                          groupValue: _uu,
-                          onChanged: (value) {
-                            setState(() {
-                              _uu = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'uu_false',
+                      groupValue: _uu,
+                      onChanged: (value) {
+                        setState(() {
+                          _uu = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'uu_dont_know',
+                      groupValue: _uu,
+                      onChanged: (value) {
+                        setState(() {
+                          _uu = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -243,31 +262,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('Ca'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'ca_true',
-                          groupValue: _ca,
-                          onChanged: (value) {
-                            setState(() {
-                              _ca = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'ca_true',
+                      groupValue: _ca,
+                      onChanged: (value) {
+                        setState(() {
+                          _ca = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'ca_false',
-                          groupValue: _ca,
-                          onChanged: (value) {
-                            setState(() {
-                              _ca = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'ca_false',
+                      groupValue: _ca,
+                      onChanged: (value) {
+                        setState(() {
+                          _ca = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'ca_dont_know',
+                      groupValue: _ca,
+                      onChanged: (value) {
+                        setState(() {
+                          _ca = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -275,31 +295,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('Tv'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'tv_true',
-                          groupValue: _tv,
-                          onChanged: (value) {
-                            setState(() {
-                              _tv = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'tv_true',
+                      groupValue: _tv,
+                      onChanged: (value) {
+                        setState(() {
+                          _tv = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'tv_false',
-                          groupValue: _tv,
-                          onChanged: (value) {
-                            setState(() {
-                              _tv = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'tv_false',
+                      groupValue: _tv,
+                      onChanged: (value) {
+                        setState(() {
+                          _tv = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'tv_dont_know',
+                      groupValue: _tv,
+                      onChanged: (value) {
+                        setState(() {
+                          _tv = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -307,31 +328,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('Sa'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'sa_true',
-                          groupValue: _sa,
-                          onChanged: (value) {
-                            setState(() {
-                              _sa = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'sa_true',
+                      groupValue: _sa,
+                      onChanged: (value) {
+                        setState(() {
+                          _sa = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'sa_false',
-                          groupValue: _sa,
-                          onChanged: (value) {
-                            setState(() {
-                              _sa = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'sa_false',
+                      groupValue: _sa,
+                      onChanged: (value) {
+                        setState(() {
+                          _sa = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'sa_dont_know',
+                      groupValue: _sa,
+                      onChanged: (value) {
+                        setState(() {
+                          _sa = value;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -339,31 +361,32 @@ class _Exudate extends State<Exudate> {
                   children: [
                     const Text('HPV'),
                     const Spacer(),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'hpv_true',
-                          groupValue: _hpv,
-                          onChanged: (value) {
-                            setState(() {
-                              _hpv = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'hpv_true',
+                      groupValue: _hpv,
+                      onChanged: (value) {
+                        setState(() {
+                          _hpv = value;
+                        });
+                      },
                     ),
-                    Column(
-                      children: [
-                        Radio<String>(
-                          value: 'hpv_false',
-                          groupValue: _hpv,
-                          onChanged: (value) {
-                            setState(() {
-                              _hpv = value;
-                            });
-                          },
-                        )
-                      ],
+                    Radio<String>(
+                      value: 'hpv_false',
+                      groupValue: _hpv,
+                      onChanged: (value) {
+                        setState(() {
+                          _hpv = value;
+                        });
+                      },
+                    ),
+                    Radio<String>(
+                      value: 'hpv_dont_know',
+                      groupValue: _hpv,
+                      onChanged: (value) {
+                        setState(() {
+                          _hpv = value;
+                        });
+                      },
                     ),
                   ],
                 ),
