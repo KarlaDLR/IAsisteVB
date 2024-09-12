@@ -1,10 +1,10 @@
-import 'package:app/screens/about_the_app.dart';
-import 'package:app/screens/about_us.dart';
-import 'package:app/screens/exudate.dart';
-import 'package:app/screens/how_to_use.dart';
-import 'package:app/screens/pcr_test.dart';
-import 'package:app/screens/privacy_politics.dart';
-import 'package:app/screens/symptoms.dart';
+import 'package:app/screens/static_screens/about_the_app.dart';
+import 'package:app/screens/static_screens/about_us.dart';
+import 'package:app/screens/dynamic_screens/exudate_test.dart';
+import 'package:app/screens/static_screens/how_to_use.dart';
+import 'package:app/screens/dynamic_screens/pcr_test.dart';
+import 'package:app/screens/static_screens/privacy_politics.dart';
+import 'package:app/screens/dynamic_screens/symptoms_test.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/option_button.dart';
 
@@ -46,7 +46,7 @@ class MainMenu extends StatelessWidget {
                   const SizedBox(height: 10),
                   const OptionButton(
                     text: 'Realizar Prueba de Síntomas',
-                    screen: Symptoms(),
+                    screen: SymptomsTest(),
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -55,12 +55,12 @@ class MainMenu extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const OptionButton(
-                    text: 'Realziar Prueba de Exudado',
-                    screen: Exudate(),
+                    text: 'Realizar Prueba de Exudado',
+                    screen: ExudateTest(),
                   ),
                   const SizedBox(height: 10),
                   const OptionButton(
-                    text: 'Realziar Prueba PCR',
+                    text: 'Realizar Prueba PCR',
                     screen: PcrTest(),
                   ),
                   const SizedBox(height: 15),

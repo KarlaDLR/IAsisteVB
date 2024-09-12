@@ -1,4 +1,4 @@
-import 'package:app/screens/results.dart';
+import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,18 +8,28 @@ class PcrTest extends StatefulWidget {
 
   @override
   State<PcrTest> createState() {
-    return _PcrTest();
+    return _PcrTestState();
   }
 }
 
-class _PcrTest extends State<PcrTest> {
+class _PcrTestState extends State<PcrTest> {
   final _formKey = GlobalKey<FormState>();
+
+  void _sendData() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Results()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar.build(context),
       body: Form(
+        key: _formKey,
         child: Scrollbar(
           child: SingleChildScrollView(
             controller: ScrollController(),
@@ -41,51 +51,105 @@ class _PcrTest extends State<PcrTest> {
                     label: Text('Av'),
                   ),
                   style: GoogleFonts.inter(),
-                  //validator: (value) {}, Corroborar una edad válida
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Gv'),
                   ),
-                  // validator: (value) { //Validar que sea una talla aceptada
-
-                  // },
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('MT1'),
                   ),
-                  //validator: (value) {}, Corroborar valor válido acorde a la entrada
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('BVAB2'),
                   ),
-                  //validator: (value) {}, Corroborar valor válido acorde a la entrada
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Lcrispatus'),
                   ),
-                  //validator: (value) {}, Corroborar valor válido acorde a la entrada
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Liners'),
                   ),
-                  //validator: (value) {}, Corroborar valor válido acorde a la entrada
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Ljensenii'),
                   ),
-                  //validator: (value) {}, Corroborar valor válido acorde a la entrada
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        double.tryParse(value) == null ||
+                        double.tryParse(value)! <= 0) {
+                      return 'Ingrese un número válido';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -111,12 +175,7 @@ class _PcrTest extends State<PcrTest> {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Results()),
-                    );
-                  },
+                  onPressed: _sendData,
                   child: const Text('ENVIAR'),
                 ),
               ],
