@@ -1,4 +1,4 @@
-import 'package:app/screens/main_menu.dart';
+import 'package:app/screens/dynamic_screens/main_menu.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppbar {

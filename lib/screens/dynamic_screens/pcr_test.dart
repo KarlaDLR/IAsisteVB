@@ -1,3 +1,4 @@
+import 'package:app/models/pcr.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +15,22 @@ class PcrTest extends StatefulWidget {
 
 class _PcrTestState extends State<PcrTest> {
   final _formKey = GlobalKey<FormState>();
+  double? _mt1;
+  double? _bvab2;
+  double? _av;
 
   void _sendData() {
     if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Results()),
+        MaterialPageRoute(
+            builder: (context) => Results(
+                  pcr: Pcr(
+                      megasphaeraType1: _mt1!,
+                      bvAssociatedBacterium2: _bvab2!,
+                      atopobiumVaginalis: _av!),
+                )),
       );
     }
   }
@@ -55,10 +66,13 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;
+                  },
+                  onSaved: (newValue) {
+                    _av = double.parse(newValue!);
                   },
                 ),
                 TextFormField(
@@ -70,7 +84,7 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;
@@ -85,10 +99,13 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;
+                  },
+                  onSaved: (newValue) {
+                    _mt1 = double.parse(newValue!);
                   },
                 ),
                 TextFormField(
@@ -100,10 +117,13 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;
+                  },
+                  onSaved: (newValue) {
+                    _bvab2 = double.parse(newValue!);
                   },
                 ),
                 TextFormField(
@@ -115,7 +135,7 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;
@@ -130,7 +150,7 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;
@@ -145,7 +165,7 @@ class _PcrTestState extends State<PcrTest> {
                     if (value == null ||
                         value.isEmpty ||
                         double.tryParse(value) == null ||
-                        double.tryParse(value)! <= 0) {
+                        double.tryParse(value)! < 0) {
                       return 'Ingrese un número válido';
                     }
                     return null;

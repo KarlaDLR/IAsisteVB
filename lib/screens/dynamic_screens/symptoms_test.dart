@@ -1,3 +1,4 @@
+import 'package:app/models/symptoms.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
@@ -14,14 +15,18 @@ class SymptomsTest extends StatefulWidget {
 
 class _SymptomsTestState extends State<SymptomsTest> {
   final _formKey = GlobalKey<FormState>();
-
   void _sendData() {
     if (_formKey.currentState!.validate()) {
-      print("Douches: " + _douches!);
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const Results()),
-      // );
+      //_formKey.currentState!.save(); Usar método onSave() para los otros campos TextField
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Results(
+            symptoms: Symptoms(
+                stink: _stink!, dyspareunia: _dyspareunia!, ardour: _ardour!),
+          ),
+        ),
+      );
     }
   }
 
@@ -186,7 +191,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'douches_true',
+                                value: 'true',
                                 groupValue: _douches,
                                 onChanged: (value) {
                                   setState(() {
@@ -201,7 +206,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'douches_false',
+                                value: 'false',
                                 groupValue: _douches,
                                 onChanged: (value) {
                                   setState(() {
@@ -216,7 +221,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No sé'),
                               Radio<String>(
-                                value: 'douches_dont_know',
+                                value: 'dont_know',
                                 groupValue: _douches,
                                 onChanged: (value) {
                                   setState(() {
@@ -260,7 +265,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'hypercholeteremia_true',
+                                value: 'true',
                                 groupValue: _hypercholeteremia,
                                 onChanged: (value) {
                                   setState(() {
@@ -275,7 +280,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'hypercholeteremia_false',
+                                value: 'false',
                                 groupValue: _hypercholeteremia,
                                 onChanged: (value) {
                                   setState(() {
@@ -290,7 +295,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No sé'),
                               Radio<String>(
-                                value: 'hypercholeteremia_dont_know',
+                                value: 'dont_know',
                                 groupValue: _hypercholeteremia,
                                 onChanged: (value) {
                                   setState(() {
@@ -326,7 +331,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Hipertensión'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'hypertension_true',
+                            value: 'true',
                             groupValue: _hypertension,
                             onChanged: (value) {
                               setState(() {
@@ -336,7 +341,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hypertension_false',
+                            value: 'false',
                             groupValue: _hypertension,
                             onChanged: (value) {
                               setState(() {
@@ -346,7 +351,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hypertension_dont_know',
+                            value: 'dont_know',
                             groupValue: _hypertension,
                             onChanged: (value) {
                               setState(() {
@@ -380,7 +385,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Hipotiroidismo'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'hypothyroidism_true',
+                            value: 'true',
                             groupValue: _hypothyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -390,7 +395,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hypothyroidism_false',
+                            value: 'false',
                             groupValue: _hypothyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -400,7 +405,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hypothyroidism_dont_know',
+                            value: 'dont_know',
                             groupValue: _hypothyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -434,7 +439,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Hipertiroidismo'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'hyperthyroidism_true',
+                            value: 'true',
                             groupValue: _hyperthyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -444,7 +449,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hyperthyroidism_false',
+                            value: 'false',
                             groupValue: _hyperthyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -454,7 +459,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hyperthyroidism_dont_know',
+                            value: 'dont_know',
                             groupValue: _hyperthyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -488,7 +493,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('EST'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'std_true',
+                            value: 'true',
                             groupValue: _std,
                             onChanged: (value) {
                               setState(() {
@@ -498,7 +503,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'std_false',
+                            value: 'false',
                             groupValue: _std,
                             onChanged: (value) {
                               setState(() {
@@ -508,7 +513,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'std_dont_know',
+                            value: 'dont_know',
                             groupValue: _std,
                             onChanged: (value) {
                               setState(() {
@@ -549,7 +554,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'itching_true',
+                                value: 'true',
                                 groupValue: _itching,
                                 onChanged: (value) {
                                   setState(() {
@@ -564,7 +569,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'itching_false',
+                                value: 'false',
                                 groupValue: _itching,
                                 onChanged: (value) {
                                   setState(() {
@@ -579,7 +584,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No sé'),
                               Radio<String>(
-                                value: 'itching_dont_know',
+                                value: 'dont_know',
                                 groupValue: _itching,
                                 onChanged: (value) {
                                   setState(() {
@@ -615,7 +620,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Irritación'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'irritation_true',
+                            value: 'true',
                             groupValue: _irritation,
                             onChanged: (value) {
                               setState(() {
@@ -625,7 +630,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'irritation_false',
+                            value: 'false',
                             groupValue: _irritation,
                             onChanged: (value) {
                               setState(() {
@@ -635,7 +640,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'irritation_dont_know',
+                            value: 'dont_know',
                             groupValue: _irritation,
                             onChanged: (value) {
                               setState(() {
@@ -669,7 +674,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Flujo Vaginal'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'discharge_true',
+                            value: 'true',
                             groupValue: _discharge,
                             onChanged: (value) {
                               setState(() {
@@ -679,7 +684,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'discharge_false',
+                            value: 'false',
                             groupValue: _discharge,
                             onChanged: (value) {
                               setState(() {
@@ -689,7 +694,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'discharge_dont_know',
+                            value: 'dont_know',
                             groupValue: _discharge,
                             onChanged: (value) {
                               setState(() {
@@ -723,7 +728,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Mal Olor'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'stink_true',
+                            value: 'true',
                             groupValue: _stink,
                             onChanged: (value) {
                               setState(() {
@@ -733,7 +738,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'stink_false',
+                            value: 'false',
                             groupValue: _stink,
                             onChanged: (value) {
                               setState(() {
@@ -743,7 +748,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'stink_dont_know',
+                            value: 'dont_know',
                             groupValue: _stink,
                             onChanged: (value) {
                               setState(() {
@@ -777,7 +782,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Dolor'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'pain_true',
+                            value: 'true',
                             groupValue: _pain,
                             onChanged: (value) {
                               setState(() {
@@ -787,7 +792,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'pain_false',
+                            value: 'false',
                             groupValue: _pain,
                             onChanged: (value) {
                               setState(() {
@@ -797,7 +802,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'pain_dont_know',
+                            value: 'dont_know',
                             groupValue: _pain,
                             onChanged: (value) {
                               setState(() {
@@ -831,7 +836,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Ardor'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'ardour_true',
+                            value: 'true',
                             groupValue: _ardour,
                             onChanged: (value) {
                               setState(() {
@@ -841,7 +846,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'ardour_false',
+                            value: 'false',
                             groupValue: _ardour,
                             onChanged: (value) {
                               setState(() {
@@ -851,7 +856,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'ardour_dont_know',
+                            value: 'dont_know',
                             groupValue: _ardour,
                             onChanged: (value) {
                               setState(() {
@@ -885,7 +890,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Dispareunia (Dolor en relaciones)'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'dyspareunia_true',
+                            value: 'true',
                             groupValue: _dyspareunia,
                             onChanged: (value) {
                               setState(() {
@@ -895,7 +900,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dyspareunia_false',
+                            value: 'false',
                             groupValue: _dyspareunia,
                             onChanged: (value) {
                               setState(() {
@@ -905,7 +910,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dyspareunia_dont_know',
+                            value: 'dont_know',
                             groupValue: _dyspareunia,
                             onChanged: (value) {
                               setState(() {

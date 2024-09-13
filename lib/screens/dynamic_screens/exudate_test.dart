@@ -1,3 +1,4 @@
+import 'package:app/models/exudate.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,13 @@ class _ExudateTestState extends State<ExudateTest> {
     if (_formKey.currentState!.validate()) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Results()),
+        MaterialPageRoute(
+            builder: (context) => Results(
+                  exudate: Exudate(
+                      mycoplasmaHominis: _mh!,
+                      candidaAlbicans: _ca!,
+                      ureaplasmaUrealyticum: _uu!),
+                )),
       );
     }
   }
@@ -73,7 +80,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'ct_true',
+                                value: 'true',
                                 groupValue: _ct,
                                 onChanged: (value) {
                                   setState(() {
@@ -87,7 +94,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'ct_false',
+                                value: 'false',
                                 groupValue: _ct,
                                 onChanged: (value) {
                                   setState(() {
@@ -101,7 +108,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             children: [
                               const Text('No sé'),
                               Radio<String>(
-                                value: 'ct_dont_know',
+                                value: 'dont_know',
                                 groupValue: _ct,
                                 onChanged: (value) {
                                   setState(() {
@@ -136,7 +143,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('HSV'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'hsv_true',
+                            value: 'true',
                             groupValue: _hsv,
                             onChanged: (value) {
                               setState(() {
@@ -145,7 +152,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hsv_false',
+                            value: 'false',
                             groupValue: _hsv,
                             onChanged: (value) {
                               setState(() {
@@ -154,7 +161,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hsv_dont_know',
+                            value: 'dont_know',
                             groupValue: _hsv,
                             onChanged: (value) {
                               setState(() {
@@ -187,7 +194,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Mg'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'mg_true',
+                            value: 'true',
                             groupValue: _mg,
                             onChanged: (value) {
                               setState(() {
@@ -196,7 +203,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'mg_false',
+                            value: 'false',
                             groupValue: _mg,
                             onChanged: (value) {
                               setState(() {
@@ -205,7 +212,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'mg_dont_know',
+                            value: 'dont_know',
                             groupValue: _mg,
                             onChanged: (value) {
                               setState(() {
@@ -238,7 +245,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Mh'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'mh_true',
+                            value: 'true',
                             groupValue: _mh,
                             onChanged: (value) {
                               setState(() {
@@ -247,7 +254,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'mh_false',
+                            value: 'false',
                             groupValue: _mh,
                             onChanged: (value) {
                               setState(() {
@@ -256,7 +263,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'mh_dont_know',
+                            value: 'dont_know',
                             groupValue: _mh,
                             onChanged: (value) {
                               setState(() {
@@ -289,7 +296,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Up'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'up_true',
+                            value: 'true',
                             groupValue: _up,
                             onChanged: (value) {
                               setState(() {
@@ -298,7 +305,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'up_false',
+                            value: 'false',
                             groupValue: _up,
                             onChanged: (value) {
                               setState(() {
@@ -307,7 +314,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'up_dont_know',
+                            value: 'dont_know',
                             groupValue: _up,
                             onChanged: (value) {
                               setState(() {
@@ -340,7 +347,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Uu'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'uu_true',
+                            value: 'true',
                             groupValue: _uu,
                             onChanged: (value) {
                               setState(() {
@@ -349,7 +356,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'uu_false',
+                            value: 'false',
                             groupValue: _uu,
                             onChanged: (value) {
                               setState(() {
@@ -358,7 +365,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'uu_dont_know',
+                            value: 'dont_know',
                             groupValue: _uu,
                             onChanged: (value) {
                               setState(() {
@@ -391,7 +398,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Ca'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'ca_true',
+                            value: 'true',
                             groupValue: _ca,
                             onChanged: (value) {
                               setState(() {
@@ -400,7 +407,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'ca_false',
+                            value: 'false',
                             groupValue: _ca,
                             onChanged: (value) {
                               setState(() {
@@ -409,7 +416,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'ca_dont_know',
+                            value: 'dont_know',
                             groupValue: _ca,
                             onChanged: (value) {
                               setState(() {
@@ -442,7 +449,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Tv'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'tv_true',
+                            value: 'true',
                             groupValue: _tv,
                             onChanged: (value) {
                               setState(() {
@@ -451,7 +458,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'tv_false',
+                            value: 'false',
                             groupValue: _tv,
                             onChanged: (value) {
                               setState(() {
@@ -460,7 +467,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'tv_dont_know',
+                            value: 'dont_know',
                             groupValue: _tv,
                             onChanged: (value) {
                               setState(() {
@@ -493,7 +500,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Sa'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'sa_true',
+                            value: 'true',
                             groupValue: _sa,
                             onChanged: (value) {
                               setState(() {
@@ -502,7 +509,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'sa_false',
+                            value: 'false',
                             groupValue: _sa,
                             onChanged: (value) {
                               setState(() {
@@ -511,7 +518,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'sa_dont_know',
+                            value: 'dont_know',
                             groupValue: _sa,
                             onChanged: (value) {
                               setState(() {
@@ -544,7 +551,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('HPV'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'hpv_true',
+                            value: 'true',
                             groupValue: _hpv,
                             onChanged: (value) {
                               setState(() {
@@ -553,7 +560,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hpv_false',
+                            value: 'false',
                             groupValue: _hpv,
                             onChanged: (value) {
                               setState(() {
@@ -562,7 +569,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'hpv_dont_know',
+                            value: 'dont_know',
                             groupValue: _hpv,
                             onChanged: (value) {
                               setState(() {
