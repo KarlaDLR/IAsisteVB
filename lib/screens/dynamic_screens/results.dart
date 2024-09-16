@@ -1,3 +1,4 @@
+import 'package:app/models/details_data.dart';
 import 'package:app/models/exudate.dart';
 import 'package:app/models/pcr.dart';
 import 'package:app/models/symptoms.dart';
@@ -22,8 +23,8 @@ class Results extends StatefulWidget {
 
 class _ResultsState extends State<Results> {
   String result = '';
-  String details = '';
   String probability = '';
+  List<DetailsData> details = [];
 
   void get results {
     if (widget.symptoms != null) {
@@ -31,22 +32,27 @@ class _ResultsState extends State<Results> {
       result = widget.symptoms!.result;
       probability =
           'PROBABILIDAD ESTIMADA: ${widget.symptoms!.probability.toString()}%';
+      details = widget.symptoms!.details;
     } else {
       if (widget.exudate != null) {
         widget.exudate!.determiningValues;
         result = widget.exudate!.result;
         probability =
             'PROBABILIDAD ESTIMADA: ${widget.exudate!.probability.toString()}%';
+        details = widget.exudate!.details;
       } else {
         widget.pcr!.determiningValues;
         result = widget.pcr!.result;
         probability =
             'PROBABILIDAD ESTIMADA: ${widget.pcr!.probability.toString()}%';
+        details = widget.pcr!.details;
       }
     }
     if (result == '') {
-      details =
-          'Se recomienda realizar más pruebas para obtener más información y ofrecer mayor precisión.';
+      details.add(DetailsData(
+          indicator: '',
+          value:
+              'Se recomienda realizar más pruebas para obtener más información y ofrecer mayor precisión.'));
     }
   }
 
@@ -55,35 +61,59 @@ class _ResultsState extends State<Results> {
     results;
     return Scaffold(
       appBar: CustomAppbar.build(context),
-      body: Scrollbar(
-        child: SingleChildScrollView(
-          controller: ScrollController(),
-          padding: const EdgeInsets.all(15),
-          child: Center(
-            child: Column(
-              children: [
-                Text(
-                  'RESULTADOS',
-                  style: Theme.of(context).textTheme.headlineLarge,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Text(
+                'RESULTADOS',
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+              const SizedBox(height: 5),
+              Text(
+                result,
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+              const SizedBox(height: 5),
+              Text(
+                probability,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(height: 15),
+              Text(
+                'Explicación del resultado obtenido:',
+                style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.justify,
+              ),
+              const SizedBox(height: 5),
+              Expanded(
+                child: SizedBox(
+                  child: ListView.builder(
+                    itemCount: details.length,
+                    itemBuilder: (context, index) {
+                      if (details[index].indicator != '') {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5, horizontal: 40),
+                          child: Row(
+                            children: [
+                              Text(details[index].indicator),
+                              const Spacer(),
+                              Text(details[index].value),
+                            ],
+                          ),
+                        );
+                      }
+                      return Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(details[index].value),
+                      );
+                    },
+                  ),
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  result,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                Text(
-                  probability,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  'Explicación del resultado obtenido:',
-                  style: Theme.of(context).textTheme.titleMedium,
-                  textAlign: TextAlign.justify,
-                ),
-                Text(details),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

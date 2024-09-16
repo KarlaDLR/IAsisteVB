@@ -1,3 +1,5 @@
+import 'package:app/models/details_data.dart';
+
 class Pcr {
   Pcr({
     required this.megasphaeraType1,
@@ -11,6 +13,7 @@ class Pcr {
 
   String result = '';
   int probability = 0;
+  List<DetailsData> details = [];
 
   void get determiningValues {
     if (megasphaeraType1 <= 0) {
@@ -30,5 +33,14 @@ class Pcr {
         probability = 100;
       }
     }
+    details.add(DetailsData(
+        indicator: 'Megasphaera type 1 (MT1)',
+        value: megasphaeraType1.toString()));
+    details.add(DetailsData(
+        indicator: 'BV-associated bacterium-2 (BVAB2)',
+        value: bvAssociatedBacterium2.toString()));
+    details.add(DetailsData(
+        indicator: 'Atopobium vaginalis (Av)',
+        value: atopobiumVaginalis.toString()));
   }
 }
