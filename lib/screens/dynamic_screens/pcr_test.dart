@@ -75,7 +75,7 @@ class _PcrTestState extends State<PcrTest> {
                     _av = double.parse(newValue!);
                   },
                 ),
-                TextFormField(
+                /* TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Gv'),
@@ -89,7 +89,7 @@ class _PcrTestState extends State<PcrTest> {
                     }
                     return null;
                   },
-                ),
+                ), */
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
@@ -126,7 +126,7 @@ class _PcrTestState extends State<PcrTest> {
                     _bvab2 = double.parse(newValue!);
                   },
                 ),
-                TextFormField(
+                /* TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Lcrispatus'),
@@ -170,7 +170,7 @@ class _PcrTestState extends State<PcrTest> {
                     }
                     return null;
                   },
-                ),
+                ), */
                 const SizedBox(height: 10),
                 Text(
                   'Siglas',
@@ -183,12 +183,12 @@ class _PcrTestState extends State<PcrTest> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Av: Atopobium vaginalis'),
-                        Text('Gv: Gardnerella vaginalis'),
+                        /* Text('Gv: Gardnerella vaginalis'), */
                         Text('MT1: Megasphaera type 1'),
                         Text('BVAB2: BV-associated bacterium-2'),
-                        Text('Lcrispatus: Lactobacilus Crispatus'),
+                        /* Text('Lcrispatus: Lactobacilus Crispatus'),
                         Text('Liners: Lactobacilus iners'),
-                        Text('Ljensenii: Lactobacilus jensenii'),
+                        Text('Ljensenii: Lactobacilus jensenii'), */
                       ],
                     )
                   ],

@@ -62,7 +62,7 @@ class _ExudateTestState extends State<ExudateTest> {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 20),
-                FormField<String>(
+                /*  FormField<String>(
                   validator: (value) {
                     if (_ct == null) {
                       return "Seleccione una opción";
@@ -229,7 +229,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         ),
                     ],
                   ),
-                ),
+                ), */
                 FormField<String>(
                   validator: (value) {
                     if (_mh == null) {
@@ -244,32 +244,47 @@ class _ExudateTestState extends State<ExudateTest> {
                         children: [
                           const Text('Mh'),
                           const Spacer(),
-                          Radio<String>(
-                            value: 'true',
-                            groupValue: _mh,
-                            onChanged: (value) {
-                              setState(() {
-                                _mh = value;
-                              });
-                            },
+                          Column(
+                            children: [
+                              const Text('Sí'),
+                              Radio<String>(
+                                value: 'true',
+                                groupValue: _mh,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _mh = value;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
-                          Radio<String>(
-                            value: 'false',
-                            groupValue: _mh,
-                            onChanged: (value) {
-                              setState(() {
-                                _mh = value;
-                              });
-                            },
+                          Column(
+                            children: [
+                              const Text('No'),
+                              Radio<String>(
+                                value: 'false',
+                                groupValue: _mh,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _mh = value;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
-                          Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _mh,
-                            onChanged: (value) {
-                              setState(() {
-                                _mh = value;
-                              });
-                            },
+                          Column(
+                            children: [
+                              const Text('No sé'),
+                              Radio<String>(
+                                value: 'dont_know',
+                                groupValue: _mh,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _mh = value;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -281,7 +296,7 @@ class _ExudateTestState extends State<ExudateTest> {
                     ],
                   ),
                 ),
-                FormField<String>(
+                /* FormField<String>(
                   validator: (value) {
                     if (_up == null) {
                       return "Seleccione una opción";
@@ -331,7 +346,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         ),
                     ],
                   ),
-                ),
+                ), */
                 FormField<String>(
                   validator: (value) {
                     if (_uu == null) {
@@ -434,7 +449,7 @@ class _ExudateTestState extends State<ExudateTest> {
                     ],
                   ),
                 ),
-                FormField<String>(
+                /* FormField<String>(
                   validator: (value) {
                     if (_tv == null) {
                       return "Seleccione una opción";
@@ -586,7 +601,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         ),
                     ],
                   ),
-                ),
+                ), */
                 Text(
                   'Siglas',
                   style: Theme.of(context).textTheme.titleMedium,
@@ -597,16 +612,16 @@ class _ExudateTestState extends State<ExudateTest> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Ct: Chlamydia trachomatis'),
+                        /* Text('Ct: Chlamydia trachomatis'),
                         Text('HSV: Herpes simplex virus'),
-                        Text('Mg: Mycoplasma genitalium'),
+                        Text('Mg: Mycoplasma genitalium'), */
                         Text('Mh: Mycoplasma hominis'),
-                        Text('Up: Ureaplasma parvum'),
+                        /* Text('Up: Ureaplasma parvum'), */
                         Text('Uu: Ureaplasma urealyticum'),
                         Text('Ca: Candida albicans'),
-                        Text('Tv: Trichomonas vaginalis'),
+                        /* Text('Tv: Trichomonas vaginalis'),
                         Text('Sa: Staphylococcus aureus'),
-                        Text('HPV: Human papillomavirus'),
+                        Text('HPV: Human papillomavirus'), */
                       ],
                     )
                   ],

@@ -173,7 +173,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   },
                 ),
                 const SizedBox(height: 10),
-                FormField<String>(
+                /* FormField<String>(
                   validator: (value) {
                     if (_douches == null) {
                       return "Seleccione una opción";
@@ -531,11 +531,12 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         ),
                     ],
                   ),
-                ),
+                ), */
                 Text(
                   'Síntomas',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
+                /*
                 FormField<String>(
                   validator: (value) {
                     if (_itching == null) {
@@ -712,7 +713,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         ),
                     ],
                   ),
-                ),
+                ), */
                 FormField<String>(
                   validator: (value) {
                     if (_stink == null) {
@@ -727,35 +728,53 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         children: [
                           const Text('Mal Olor'),
                           const Spacer(),
-                          Radio<String>(
-                            value: 'true',
-                            groupValue: _stink,
-                            onChanged: (value) {
-                              setState(() {
-                                _stink = value;
-                                state.didChange(value);
-                              });
-                            },
+                          Column(
+                            //Eliminar más adelante
+                            children: [
+                              const Text('Sí'), //Eliminar más adelante
+                              Radio<String>(
+                                value: 'true',
+                                groupValue: _stink,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _stink = value;
+                                    state.didChange(value);
+                                  });
+                                },
+                              ),
+                            ],
                           ),
-                          Radio<String>(
-                            value: 'false',
-                            groupValue: _stink,
-                            onChanged: (value) {
-                              setState(() {
-                                _stink = value;
-                                state.didChange(value);
-                              });
-                            },
+                          Column(
+                            //Eliminar más adelante
+                            children: [
+                              const Text('No'), //Eliminar más adelante
+                              Radio<String>(
+                                value: 'false',
+                                groupValue: _stink,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _stink = value;
+                                    state.didChange(value);
+                                  });
+                                },
+                              ),
+                            ],
                           ),
-                          Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _stink,
-                            onChanged: (value) {
-                              setState(() {
-                                _stink = value;
-                                state.didChange(value);
-                              });
-                            },
+                          Column(
+                            //Elimiar más adelante
+                            children: [
+                              const Text('No sé'), //Eliminar más adelante
+                              Radio<String>(
+                                value: 'dont_know',
+                                groupValue: _stink,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _stink = value;
+                                    state.didChange(value);
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -767,7 +786,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     ],
                   ),
                 ),
-                FormField<String>(
+                /* FormField<String>(
                   validator: (value) {
                     if (_pain == null) {
                       return "Seleccione una opción";
@@ -820,7 +839,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         ),
                     ],
                   ),
-                ),
+                ), */
                 FormField<String>(
                   validator: (value) {
                     if (_ardour == null) {
