@@ -25,12 +25,21 @@ class _PcrTestState extends State<PcrTest> {
       Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => Results(
-                  pcr: Pcr(
-                      megasphaeraType1: _mt1!,
-                      bvAssociatedBacterium2: _bvab2!,
-                      atopobiumVaginalis: _av!),
-                )),
+          builder: (context) => Results(
+            pcr: Pcr(
+                megasphaeraType1: _mt1!,
+                bvAssociatedBacterium2: _bvab2!,
+                atopobiumVaginalis: _av!),
+          ),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Favor de ingresar todos los datos'),
+          duration: Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
       );
     }
   }
@@ -75,7 +84,7 @@ class _PcrTestState extends State<PcrTest> {
                     _av = double.parse(newValue!);
                   },
                 ),
-                /* TextFormField(
+                TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Gv'),
@@ -89,7 +98,7 @@ class _PcrTestState extends State<PcrTest> {
                     }
                     return null;
                   },
-                ), */
+                ),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
@@ -126,7 +135,7 @@ class _PcrTestState extends State<PcrTest> {
                     _bvab2 = double.parse(newValue!);
                   },
                 ),
-                /* TextFormField(
+                TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     label: Text('Lcrispatus'),
@@ -170,7 +179,7 @@ class _PcrTestState extends State<PcrTest> {
                     }
                     return null;
                   },
-                ), */
+                ),
                 const SizedBox(height: 10),
                 Text(
                   'Siglas',
@@ -183,12 +192,12 @@ class _PcrTestState extends State<PcrTest> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Av: Atopobium vaginalis'),
-                        /* Text('Gv: Gardnerella vaginalis'), */
+                        Text('Gv: Gardnerella vaginalis'),
                         Text('MT1: Megasphaera type 1'),
                         Text('BVAB2: BV-associated bacterium-2'),
-                        /* Text('Lcrispatus: Lactobacilus Crispatus'),
+                        Text('Lcrispatus: Lactobacilus Crispatus'),
                         Text('Liners: Lactobacilus iners'),
-                        Text('Ljensenii: Lactobacilus jensenii'), */
+                        Text('Ljensenii: Lactobacilus jensenii'),
                       ],
                     )
                   ],

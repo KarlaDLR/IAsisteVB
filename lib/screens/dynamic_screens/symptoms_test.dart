@@ -27,6 +27,14 @@ class _SymptomsTestState extends State<SymptomsTest> {
           ),
         ),
       );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Favor de ingresar todos los datos'),
+          duration: Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     }
   }
 
@@ -173,7 +181,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   },
                 ),
                 const SizedBox(height: 10),
-                /* FormField<String>(
+                FormField<String>(
                   validator: (value) {
                     if (_douches == null) {
                       return "Seleccione una opción";
@@ -191,7 +199,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'true',
+                                value: 'Verdadero',
                                 groupValue: _douches,
                                 onChanged: (value) {
                                   setState(() {
@@ -206,7 +214,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'false',
+                                value: 'Falso',
                                 groupValue: _douches,
                                 onChanged: (value) {
                                   setState(() {
@@ -217,7 +225,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               )
                             ],
                           ),
-                          Column(
+                          /* Column(
                             children: [
                               const Text('No sé'),
                               Radio<String>(
@@ -231,7 +239,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 },
                               )
                             ],
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -265,7 +273,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'true',
+                                value: 'Verdadero',
                                 groupValue: _hypercholeteremia,
                                 onChanged: (value) {
                                   setState(() {
@@ -280,7 +288,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'false',
+                                value: 'Falso',
                                 groupValue: _hypercholeteremia,
                                 onChanged: (value) {
                                   setState(() {
@@ -295,7 +303,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No sé'),
                               Radio<String>(
-                                value: 'dont_know',
+                                value: 'Inseguro',
                                 groupValue: _hypercholeteremia,
                                 onChanged: (value) {
                                   setState(() {
@@ -331,7 +339,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Hipertensión'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _hypertension,
                             onChanged: (value) {
                               setState(() {
@@ -341,7 +349,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _hypertension,
                             onChanged: (value) {
                               setState(() {
@@ -351,7 +359,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _hypertension,
                             onChanged: (value) {
                               setState(() {
@@ -385,7 +393,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Hipotiroidismo'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _hypothyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -395,7 +403,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _hypothyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -405,7 +413,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _hypothyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -439,7 +447,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Hipertiroidismo'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _hyperthyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -449,7 +457,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _hyperthyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -459,7 +467,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _hyperthyroidism,
                             onChanged: (value) {
                               setState(() {
@@ -493,7 +501,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('EST'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _std,
                             onChanged: (value) {
                               setState(() {
@@ -503,7 +511,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _std,
                             onChanged: (value) {
                               setState(() {
@@ -513,7 +521,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _std,
                             onChanged: (value) {
                               setState(() {
@@ -531,12 +539,11 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         ),
                     ],
                   ),
-                ), */
+                ),
                 Text(
                   'Síntomas',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                /*
                 FormField<String>(
                   validator: (value) {
                     if (_itching == null) {
@@ -555,7 +562,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'true',
+                                value: 'Verdadero',
                                 groupValue: _itching,
                                 onChanged: (value) {
                                   setState(() {
@@ -570,7 +577,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'false',
+                                value: 'Falso',
                                 groupValue: _itching,
                                 onChanged: (value) {
                                   setState(() {
@@ -581,7 +588,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               )
                             ],
                           ),
-                          Column(
+                          /* Column(
                             children: [
                               const Text('No sé'),
                               Radio<String>(
@@ -595,7 +602,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 },
                               )
                             ],
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -621,7 +628,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Irritación'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _irritation,
                             onChanged: (value) {
                               setState(() {
@@ -631,7 +638,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _irritation,
                             onChanged: (value) {
                               setState(() {
@@ -640,7 +647,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'dont_know',
                             groupValue: _irritation,
                             onChanged: (value) {
@@ -649,7 +656,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 state.didChange(value);
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -675,7 +682,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Flujo Vaginal'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _discharge,
                             onChanged: (value) {
                               setState(() {
@@ -685,7 +692,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _discharge,
                             onChanged: (value) {
                               setState(() {
@@ -694,7 +701,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'dont_know',
                             groupValue: _discharge,
                             onChanged: (value) {
@@ -703,7 +710,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 state.didChange(value);
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -713,7 +720,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         ),
                     ],
                   ),
-                ), */
+                ),
                 FormField<String>(
                   validator: (value) {
                     if (_stink == null) {
@@ -728,54 +735,36 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         children: [
                           const Text('Mal Olor'),
                           const Spacer(),
-                          Column(
-                            //Eliminar más adelante
-                            children: [
-                              const Text('Sí'), //Eliminar más adelante
-                              Radio<String>(
-                                value: 'true',
-                                groupValue: _stink,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _stink = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              ),
-                            ],
+                          Radio<String>(
+                            value: 'Verdadero',
+                            groupValue: _stink,
+                            onChanged: (value) {
+                              setState(() {
+                                _stink = value;
+                                state.didChange(value);
+                              });
+                            },
                           ),
-                          Column(
-                            //Eliminar más adelante
-                            children: [
-                              const Text('No'), //Eliminar más adelante
-                              Radio<String>(
-                                value: 'false',
-                                groupValue: _stink,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _stink = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              ),
-                            ],
+                          Radio<String>(
+                            value: 'Falso',
+                            groupValue: _stink,
+                            onChanged: (value) {
+                              setState(() {
+                                _stink = value;
+                                state.didChange(value);
+                              });
+                            },
                           ),
-                          Column(
-                            //Elimiar más adelante
-                            children: [
-                              const Text('No sé'), //Eliminar más adelante
-                              Radio<String>(
-                                value: 'dont_know',
-                                groupValue: _stink,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _stink = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
+                          /*  Radio<String>(
+                            value: 'dont_know',
+                            groupValue: _stink,
+                            onChanged: (value) {
+                              setState(() {
+                                _stink = value;
+                                state.didChange(value);
+                              });
+                            },
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -786,7 +775,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     ],
                   ),
                 ),
-                /* FormField<String>(
+                FormField<String>(
                   validator: (value) {
                     if (_pain == null) {
                       return "Seleccione una opción";
@@ -801,7 +790,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Dolor'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _pain,
                             onChanged: (value) {
                               setState(() {
@@ -811,7 +800,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _pain,
                             onChanged: (value) {
                               setState(() {
@@ -820,7 +809,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'dont_know',
                             groupValue: _pain,
                             onChanged: (value) {
@@ -829,7 +818,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 state.didChange(value);
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -839,7 +828,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         ),
                     ],
                   ),
-                ), */
+                ),
                 FormField<String>(
                   validator: (value) {
                     if (_ardour == null) {
@@ -855,7 +844,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Ardor'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _ardour,
                             onChanged: (value) {
                               setState(() {
@@ -865,7 +854,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _ardour,
                             onChanged: (value) {
                               setState(() {
@@ -874,7 +863,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'dont_know',
                             groupValue: _ardour,
                             onChanged: (value) {
@@ -883,7 +872,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 state.didChange(value);
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -909,7 +898,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                           const Text('Dispareunia (Dolor en relaciones)'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _dyspareunia,
                             onChanged: (value) {
                               setState(() {
@@ -919,7 +908,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _dyspareunia,
                             onChanged: (value) {
                               setState(() {
@@ -928,7 +917,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'dont_know',
                             groupValue: _dyspareunia,
                             onChanged: (value) {
@@ -937,7 +926,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                                 state.didChange(value);
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -950,12 +939,6 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 ),
                 ElevatedButton(
                   onPressed: _sendData,
-                  /*() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Results()),
-                    );
-                  },*/
                   child: const Text('ENVIAR'),
                 ),
               ],

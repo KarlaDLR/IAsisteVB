@@ -23,40 +23,48 @@ class AboutTheApp extends StatelessWidget {
               Text(
                 'Aplicación de Inteligencia Artificial para el Diagnóstico de Vaginosis Bacteriana',
                 style: Theme.of(context).textTheme.titleLarge,
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 10),
               const Text(
                 'Esta aplicación móvil ha sido creada con el propósito de asistir a especialistas médicos en su toma de decisiones para el diagnóstico y manejo de la vaginosis bacteriana. A continuación, se detallan las funcionalidades clave que ofrece:',
+                textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
               Text(
                 'Procesamiento de Análisis Clínicos Específicos:',
                 style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 10),
               const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.circle,
-                    size: 8,
+                    Icons.label_important,
+                    size: 20,
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Los especialistas pueden ingresar los resultados de análisis de sangre, cultivos y pruebas de PCR relacionadas con la vaginosis bacteriana.',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
               ),
               const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.circle,
-                    size: 8,
+                    Icons.label_important,
+                    size: 20,
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'La aplicación procesa estos datos para identificar patrones y proporcionar información relevante.',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
@@ -65,31 +73,37 @@ class AboutTheApp extends StatelessWidget {
               Text(
                 'Cálculo y Visualización de la Probabilidad de Padecimiento de la Vaginosis Bacteriana:',
                 style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 10),
               const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.circle,
-                    size: 8,
+                    Icons.label_important,
+                    size: 20,
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Basándose en los análisis clínicos y otros datos ingresados, la aplicación calcula la probabilidad de que una paciente tenga vaginosis bacteriana.',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
               ),
               const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.circle,
-                    size: 8,
+                    Icons.label_important,
+                    size: 20,
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Muestra esta probabilidad de manera clara para que el médico pueda tomar decisiones informadas.',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
@@ -97,32 +111,38 @@ class AboutTheApp extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 'Explicación Completa del Análisis Realizado:',
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
+              const SizedBox(height: 10),
               const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.circle,
-                    size: 8,
+                    Icons.label_important,
+                    size: 20,
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'La aplicación proporciona detalles sobre cómo se llegó al cálculo de probabilidad.',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
               ),
               const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.circle,
-                    size: 8,
+                    Icons.label_important,
+                    size: 20,
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Explica los marcadores específicos que llevaron a esa conclusión.',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],

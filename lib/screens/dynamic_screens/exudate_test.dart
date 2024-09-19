@@ -30,12 +30,21 @@ class _ExudateTestState extends State<ExudateTest> {
       Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => Results(
-                  exudate: Exudate(
-                      mycoplasmaHominis: _mh!,
-                      candidaAlbicans: _ca!,
-                      ureaplasmaUrealyticum: _uu!),
-                )),
+          builder: (context) => Results(
+            exudate: Exudate(
+                mycoplasmaHominis: _mh!,
+                candidaAlbicans: _ca!,
+                ureaplasmaUrealyticum: _uu!),
+          ),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Favor de ingresar todos los datos'),
+          duration: Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
       );
     }
   }
@@ -62,7 +71,7 @@ class _ExudateTestState extends State<ExudateTest> {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 20),
-                /*  FormField<String>(
+                FormField<String>(
                   validator: (value) {
                     if (_ct == null) {
                       return "Seleccione una opción";
@@ -80,7 +89,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             children: [
                               const Text('Sí'),
                               Radio<String>(
-                                value: 'true',
+                                value: 'Verdadero',
                                 groupValue: _ct,
                                 onChanged: (value) {
                                   setState(() {
@@ -94,7 +103,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             children: [
                               const Text('No'),
                               Radio<String>(
-                                value: 'false',
+                                value: 'Falso',
                                 groupValue: _ct,
                                 onChanged: (value) {
                                   setState(() {
@@ -108,7 +117,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             children: [
                               const Text('No sé'),
                               Radio<String>(
-                                value: 'dont_know',
+                                value: 'Inseguro',
                                 groupValue: _ct,
                                 onChanged: (value) {
                                   setState(() {
@@ -143,7 +152,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('HSV'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _hsv,
                             onChanged: (value) {
                               setState(() {
@@ -152,7 +161,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _hsv,
                             onChanged: (value) {
                               setState(() {
@@ -161,7 +170,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _hsv,
                             onChanged: (value) {
                               setState(() {
@@ -194,7 +203,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Mg'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _mg,
                             onChanged: (value) {
                               setState(() {
@@ -203,7 +212,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _mg,
                             onChanged: (value) {
                               setState(() {
@@ -212,7 +221,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _mg,
                             onChanged: (value) {
                               setState(() {
@@ -229,7 +238,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         ),
                     ],
                   ),
-                ), */
+                ),
                 FormField<String>(
                   validator: (value) {
                     if (_mh == null) {
@@ -244,47 +253,32 @@ class _ExudateTestState extends State<ExudateTest> {
                         children: [
                           const Text('Mh'),
                           const Spacer(),
-                          Column(
-                            children: [
-                              const Text('Sí'),
-                              Radio<String>(
-                                value: 'true',
-                                groupValue: _mh,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _mh = value;
-                                  });
-                                },
-                              ),
-                            ],
+                          Radio<String>(
+                            value: 'Verdadero',
+                            groupValue: _mh,
+                            onChanged: (value) {
+                              setState(() {
+                                _mh = value;
+                              });
+                            },
                           ),
-                          Column(
-                            children: [
-                              const Text('No'),
-                              Radio<String>(
-                                value: 'false',
-                                groupValue: _mh,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _mh = value;
-                                  });
-                                },
-                              ),
-                            ],
+                          Radio<String>(
+                            value: 'Falso',
+                            groupValue: _mh,
+                            onChanged: (value) {
+                              setState(() {
+                                _mh = value;
+                              });
+                            },
                           ),
-                          Column(
-                            children: [
-                              const Text('No sé'),
-                              Radio<String>(
-                                value: 'dont_know',
-                                groupValue: _mh,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _mh = value;
-                                  });
-                                },
-                              ),
-                            ],
+                          Radio<String>(
+                            value: 'Inseguro',
+                            groupValue: _mh,
+                            onChanged: (value) {
+                              setState(() {
+                                _mh = value;
+                              });
+                            },
                           ),
                         ],
                       ),
@@ -296,7 +290,7 @@ class _ExudateTestState extends State<ExudateTest> {
                     ],
                   ),
                 ),
-                /* FormField<String>(
+                FormField<String>(
                   validator: (value) {
                     if (_up == null) {
                       return "Seleccione una opción";
@@ -311,7 +305,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Up'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _up,
                             onChanged: (value) {
                               setState(() {
@@ -320,7 +314,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _up,
                             onChanged: (value) {
                               setState(() {
@@ -329,7 +323,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _up,
                             onChanged: (value) {
                               setState(() {
@@ -346,7 +340,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         ),
                     ],
                   ),
-                ), */
+                ),
                 FormField<String>(
                   validator: (value) {
                     if (_uu == null) {
@@ -362,7 +356,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Uu'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _uu,
                             onChanged: (value) {
                               setState(() {
@@ -371,7 +365,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _uu,
                             onChanged: (value) {
                               setState(() {
@@ -380,7 +374,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _uu,
                             onChanged: (value) {
                               setState(() {
@@ -413,7 +407,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Ca'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _ca,
                             onChanged: (value) {
                               setState(() {
@@ -422,7 +416,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _ca,
                             onChanged: (value) {
                               setState(() {
@@ -431,7 +425,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _ca,
                             onChanged: (value) {
                               setState(() {
@@ -449,7 +443,7 @@ class _ExudateTestState extends State<ExudateTest> {
                     ],
                   ),
                 ),
-                /* FormField<String>(
+                FormField<String>(
                   validator: (value) {
                     if (_tv == null) {
                       return "Seleccione una opción";
@@ -464,7 +458,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Tv'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _tv,
                             onChanged: (value) {
                               setState(() {
@@ -473,7 +467,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _tv,
                             onChanged: (value) {
                               setState(() {
@@ -482,7 +476,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _tv,
                             onChanged: (value) {
                               setState(() {
@@ -515,7 +509,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('Sa'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _sa,
                             onChanged: (value) {
                               setState(() {
@@ -524,7 +518,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _sa,
                             onChanged: (value) {
                               setState(() {
@@ -533,7 +527,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _sa,
                             onChanged: (value) {
                               setState(() {
@@ -566,7 +560,7 @@ class _ExudateTestState extends State<ExudateTest> {
                           const Text('HPV'),
                           const Spacer(),
                           Radio<String>(
-                            value: 'true',
+                            value: 'Verdadero',
                             groupValue: _hpv,
                             onChanged: (value) {
                               setState(() {
@@ -575,7 +569,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'false',
+                            value: 'Falso',
                             groupValue: _hpv,
                             onChanged: (value) {
                               setState(() {
@@ -584,7 +578,7 @@ class _ExudateTestState extends State<ExudateTest> {
                             },
                           ),
                           Radio<String>(
-                            value: 'dont_know',
+                            value: 'Inseguro',
                             groupValue: _hpv,
                             onChanged: (value) {
                               setState(() {
@@ -601,7 +595,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         ),
                     ],
                   ),
-                ), */
+                ),
                 Text(
                   'Siglas',
                   style: Theme.of(context).textTheme.titleMedium,
@@ -612,28 +606,23 @@ class _ExudateTestState extends State<ExudateTest> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        /* Text('Ct: Chlamydia trachomatis'),
+                        Text('Ct: Chlamydia trachomatis'),
                         Text('HSV: Herpes simplex virus'),
-                        Text('Mg: Mycoplasma genitalium'), */
+                        Text('Mg: Mycoplasma genitalium'),
                         Text('Mh: Mycoplasma hominis'),
-                        /* Text('Up: Ureaplasma parvum'), */
+                        Text('Up: Ureaplasma parvum'),
                         Text('Uu: Ureaplasma urealyticum'),
                         Text('Ca: Candida albicans'),
-                        /* Text('Tv: Trichomonas vaginalis'),
+                        Text('Tv: Trichomonas vaginalis'),
                         Text('Sa: Staphylococcus aureus'),
-                        Text('HPV: Human papillomavirus'), */
+                        Text('HPV: Human papillomavirus'),
                       ],
                     )
                   ],
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: _sendData, //() {
-                  //    Navigator.push(
-                  //      context,
-                  //      MaterialPageRoute(builder: (context) => const Results()),
-                  //    );
-                  // },
+                  onPressed: _sendData,
                   child: const Text('ENVIAR'),
                 ),
               ],
