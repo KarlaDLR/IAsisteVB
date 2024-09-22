@@ -41,7 +41,7 @@ class _ExudateTestState extends State<ExudateTest> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Favor de ingresar todos los datos'),
+          content: Text('Favor de ingresar todos los datos correctamente'),
           duration: Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
         ),

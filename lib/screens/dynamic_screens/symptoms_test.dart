@@ -30,7 +30,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Favor de ingresar todos los datos'),
+          content: Text('Favor de ingresar todos los datos correctamente'),
           duration: Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
         ),
@@ -114,7 +114,8 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     if (value == null ||
                         value.isEmpty ||
                         int.tryParse(value) == null ||
-                        int.tryParse(value)! <= 0) {
+                        int.tryParse(value)! < 0) {
+                      //Hablarlo con los demás y el maestro. Aseguramiento total de todos los datos!!
                       return 'Ingrese un número válido';
                     }
                     return null;
