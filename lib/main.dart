@@ -4,7 +4,7 @@ import 'package:app/screens/dynamic_screens/main_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
-  primarySwatch: Colors.pink,
+  scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     backgroundColor: const Color.fromARGB(255, 247, 140, 154),
     titleTextStyle: GoogleFonts.inter(
@@ -101,7 +101,6 @@ void main() {
     runApp(
       MaterialApp(
         theme: theme,
-        //home: const MainMenu(),
         home: const MainMenu(),
       ),
     );

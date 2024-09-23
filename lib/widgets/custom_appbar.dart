@@ -23,7 +23,7 @@ class CustomAppbar {
           );
         },
         icon: Image.asset(
-          'assets/images/IAsisteVB.png',
+          'assets/images/IAsisteVB_logo.png',
         ),
       ),
     );

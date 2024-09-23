@@ -19,7 +19,7 @@ class Symptoms {
     /* if (stink != 'dont_know' &&
         dyspareunia != 'dont_know' &&
         ardour != 'dont_know') { */
-    if (stink == 'Veradero') {
+    if (stink == 'Verdadero') {
       if (dyspareunia == 'Verdadero') {
         result = 'Indeterminado';
         probability = ((3.09 - 0.09) / 3.09 * 100).toInt();
