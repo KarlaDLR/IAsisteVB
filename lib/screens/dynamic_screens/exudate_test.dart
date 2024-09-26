@@ -113,7 +113,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               )
                             ],
                           ),
-                          Column(
+                          /* Column(
                             children: [
                               const Text('No sé'),
                               Radio<String>(
@@ -126,7 +126,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 },
                               )
                             ],
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -169,7 +169,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _hsv,
                             onChanged: (value) {
@@ -177,7 +177,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _hsv = value;
                               });
                             },
-                          )
+                          ) */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -220,7 +220,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _mg,
                             onChanged: (value) {
@@ -228,7 +228,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _mg = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -271,7 +271,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _mh,
                             onChanged: (value) {
@@ -279,7 +279,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _mh = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -322,7 +322,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _up,
                             onChanged: (value) {
@@ -330,7 +330,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _up = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -373,7 +373,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _uu,
                             onChanged: (value) {
@@ -381,7 +381,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _uu = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -424,7 +424,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _ca,
                             onChanged: (value) {
@@ -432,7 +432,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _ca = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -475,7 +475,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _tv,
                             onChanged: (value) {
@@ -483,7 +483,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _tv = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -526,7 +526,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _sa,
                             onChanged: (value) {
@@ -534,7 +534,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _sa = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
@@ -577,7 +577,7 @@ class _ExudateTestState extends State<ExudateTest> {
                               });
                             },
                           ),
-                          Radio<String>(
+                          /* Radio<String>(
                             value: 'Inseguro',
                             groupValue: _hpv,
                             onChanged: (value) {
@@ -585,7 +585,7 @@ class _ExudateTestState extends State<ExudateTest> {
                                 _hpv = value;
                               });
                             },
-                          ),
+                          ), */
                         ],
                       ),
                       if (state.hasError) // Muestra el error si lo hay
