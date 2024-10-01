@@ -1,10 +1,10 @@
-import 'package:app/screens/main_menu.dart';
+import 'package:app/screens/dynamic_screens/main_menu.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppbar {
   static AppBar build(BuildContext context) {
     return AppBar(
-      title: const Text('IASisteVB'),
+      title: const Text('IAsisteVB'),
       actions: [
         IconButton(
           onPressed: () {
@@ -23,7 +23,7 @@ class CustomAppbar {
           );
         },
         icon: Image.asset(
-          'assets/images/IAsisteVB.png',
+          'assets/images/IAsisteVB_logo.png',
         ),
       ),
     );

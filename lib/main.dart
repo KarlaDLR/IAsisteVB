@@ -1,11 +1,10 @@
-import 'package:app/screens/symptoms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:app/screens/main_menu.dart';
+import 'package:app/screens/dynamic_screens/main_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
-  primarySwatch: Colors.pink,
+  scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     backgroundColor: const Color.fromARGB(255, 247, 140, 154),
     titleTextStyle: GoogleFonts.inter(
@@ -50,49 +49,60 @@ final theme = ThemeData(
     ),
   ),
   textTheme: TextTheme(
+    //Fuente para el texto normal
     bodyMedium: GoogleFonts.assistant(
       fontSize: 16,
       color: Colors.black,
     ),
-    bodyLarge: GoogleFonts.inter(
+    bodySmall: GoogleFonts.assistant(
+      color: Colors.red,
+    ),
+    //Fuente para subtítulos
+    titleMedium: GoogleFonts.assistant(
+      fontSize: 17.5,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    //Fuente para títulos prinicipales
+    titleLarge: GoogleFonts.assistant(
+      fontSize: 18.5,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    //Anteriormente bodylarge -> Valor de entrada en los text Field
+    //Fuente para textos separadores
+    headlineMedium: GoogleFonts.inter(
       fontSize: 20,
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.bold,
       color: const Color.fromARGB(255, 111, 33, 44),
     ),
+    //Fuente para títulos de ventanas
+    headlineLarge: GoogleFonts.inter(
+      fontSize: 28,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.bold,
+      color: const Color.fromARGB(255, 111, 33, 44),
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    labelStyle: GoogleFonts.assistant(
+      fontSize: 15,
+    ),
+    hintStyle: GoogleFonts.assistant(
+      fontSize: 15,
+    ),
   ),
 );
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo prueba',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((fn) {
+    runApp(
+      MaterialApp(
+        theme: theme,
+        home: const MainMenu(),
       ),
     );
-  }
+  });
 }
