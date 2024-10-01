@@ -15,12 +15,21 @@ class CustomAppbar {
       ],
       leading: IconButton(
         onPressed: () {
-          Navigator.push(
+          //Va a la ventana y elimina todas las ventanas del stack de ventanas.
+          Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
               builder: (context) => const MainMenu(),
             ),
+            (Route<dynamic> route) => false,
           );
+          //Manda al menú principal pero guarda todas las ventanas en el stack
+          /* Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const MainMenu(),
+            ),
+          ); */
         },
         icon: Image.asset(
           'assets/images/IAsisteVB_logo.png',
