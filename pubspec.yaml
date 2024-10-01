@@ -50,7 +50,7 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 icons_launcher:
-  image_path: 'assets/images/IAsisteVB_logo.png'
+  image_path: 'assets/images/IAsisteVB.png'
   platforms:
     android:
       enable: true
