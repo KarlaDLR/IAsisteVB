@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OptionButton extends StatelessWidget {
-  const OptionButton({
+class ScreenButton extends StatelessWidget {
+  const ScreenButton({
     super.key,
     required this.text,
     required this.screen,
@@ -22,7 +22,20 @@ class OptionButton extends StatelessWidget {
                 builder: (context) => screen,
               ));
         },
-        child: Text(text),
+        child: Stack(
+          children: [
+            Text(
+              text,
+              style: TextStyle(
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 5
+                  ..color = const Color.fromARGB(255, 109, 31, 44),
+              ),
+            ),
+            Text(text),
+          ],
+        ),
       ),
     );
   }

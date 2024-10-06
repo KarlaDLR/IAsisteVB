@@ -6,7 +6,7 @@ import 'package:app/screens/dynamic_screens/pcr_test.dart';
 import 'package:app/screens/static_screens/privacy_politics.dart';
 import 'package:app/screens/dynamic_screens/symptoms_test.dart';
 import 'package:flutter/material.dart';
-import 'package:app/widgets/option_button.dart';
+import 'package:app/widgets/screen_button.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({super.key});
@@ -44,7 +44,7 @@ class MainMenu extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Realizar Prueba de Síntomas',
                     screen: SymptomsTest(),
                   ),
@@ -54,12 +54,12 @@ class MainMenu extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Realizar Prueba de Exudado',
                     screen: ExudateTest(),
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Realizar Prueba PCR',
                     screen: PcrTest(),
                   ),
@@ -69,22 +69,22 @@ class MainMenu extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Nosotros',
                     screen: AboutUs(),
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Modo de uso',
                     screen: HowToUse(), //Change Screen!!
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Sobre la app',
                     screen: AboutTheApp(),
                   ),
                   const SizedBox(height: 10),
-                  const OptionButton(
+                  const ScreenButton(
                     text: 'Políticas de privacidad',
                     screen: PrivacyPolitics(),
                   ),

@@ -1,6 +1,7 @@
 import 'package:app/models/pcr.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
+import 'package:app/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -203,9 +204,9 @@ class _PcrTestState extends State<PcrTest> {
                   ],
                 ),
                 const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: _sendData,
-                  child: const Text('ENVIAR'),
+                SendButton(
+                  text: 'ENVIAR',
+                  function: _sendData,
                 ),
               ],
             ),

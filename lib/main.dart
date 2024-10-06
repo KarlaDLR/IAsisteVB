@@ -23,7 +23,7 @@ final theme = ThemeData(
       textStyle: const TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        shadows: [
+        /* shadows: [
           Shadow(
             // Top left shadow
             offset: Offset(-1.5, -1.5),
@@ -44,7 +44,7 @@ final theme = ThemeData(
             offset: Offset(-1.5, 1.5),
             color: Color.fromARGB(255, 109, 31, 44),
           ),
-        ],
+        ], */
       ),
     ),
   ),
