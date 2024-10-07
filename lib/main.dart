@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:app/screens/dynamic_screens/main_menu.dart';
+import 'package:app/screens/static_screens/main_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
@@ -23,28 +23,6 @@ final theme = ThemeData(
       textStyle: const TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        /* shadows: [
-          Shadow(
-            // Top left shadow
-            offset: Offset(-1.5, -1.5),
-            color: Color.fromARGB(255, 109, 31, 44),
-          ),
-          Shadow(
-            // Top right shadow
-            offset: Offset(1.5, -1.5),
-            color: Color.fromARGB(255, 109, 31, 44),
-          ),
-          Shadow(
-            // Bottom right shadow
-            offset: Offset(1.5, 1.5),
-            color: Color.fromARGB(255, 109, 31, 44),
-          ),
-          Shadow(
-            // Bottom left shadow
-            offset: Offset(-1.5, 1.5),
-            color: Color.fromARGB(255, 109, 31, 44),
-          ),
-        ], */
       ),
     ),
   ),
