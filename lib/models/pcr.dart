@@ -2,26 +2,26 @@ import 'package:app/models/details_data.dart';
 
 class Pcr {
   Pcr({
-    required this.megasphaeraType1,
-    required this.bvAssociatedBacterium2,
-    required this.atopobiumVaginalis,
+    this.megasphaeraType1,
+    this.bvAssociatedBacterium2,
+    this.atopobiumVaginalis,
   });
 
-  final double megasphaeraType1;
-  final double bvAssociatedBacterium2;
-  final double atopobiumVaginalis;
+  double? megasphaeraType1;
+  double? bvAssociatedBacterium2;
+  double? atopobiumVaginalis;
 
   String result = '';
   int probability = 0;
   List<DetailsData> details = [];
 
   void get determiningValues {
-    if (megasphaeraType1 <= 0) {
+    if (megasphaeraType1! <= 0) {
       result = 'Normal';
       probability = ((79 - 15) / 79 * 100).toInt();
     } else {
-      if (bvAssociatedBacterium2 <= 25.77) {
-        if (atopobiumVaginalis <= 0) {
+      if (bvAssociatedBacterium2! <= 25.77) {
+        if (atopobiumVaginalis! <= 0) {
           result = 'Indeterminado';
           probability = ((2 - 1) / 2 * 100).toInt();
         } else {

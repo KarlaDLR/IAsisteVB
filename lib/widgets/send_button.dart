@@ -21,7 +21,7 @@ class SendButton extends StatelessWidget {
             style: TextStyle(
               foreground: Paint()
                 ..style = PaintingStyle.stroke
-                ..strokeWidth = 5
+                ..strokeWidth = 4
                 ..color = const Color.fromARGB(255, 109, 31, 44),
             ),
           ),

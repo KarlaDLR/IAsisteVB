@@ -2,23 +2,20 @@ import 'package:app/models/details_data.dart';
 
 class Symptoms {
   Symptoms({
-    required this.stink,
-    required this.dyspareunia,
-    required this.ardour,
+    this.stink,
+    this.dyspareunia,
+    this.ardour,
   });
 
-  final String stink;
-  final String dyspareunia;
-  final String ardour;
+  String? stink;
+  String? dyspareunia;
+  String? ardour;
 
   String result = '';
   int probability = 0;
   List<DetailsData> details = [];
 
   void get determiningValues {
-    /* if (stink != 'dont_know' &&
-        dyspareunia != 'dont_know' &&
-        ardour != 'dont_know') { */
     if (stink == 'Verdadero') {
       if (dyspareunia == 'Verdadero') {
         result = 'Indeterminado';
@@ -36,9 +33,8 @@ class Symptoms {
       result = 'Normal';
       probability = ((95.71 - 33) / 95.71 * 100).toInt();
     }
-    details.add(DetailsData(indicator: 'Mal Olor', value: stink));
-    details.add(DetailsData(indicator: 'Dispareunia', value: dyspareunia));
-    details.add(DetailsData(indicator: 'Ardor', value: ardour));
+    details.add(DetailsData(indicator: 'Mal Olor', value: stink!));
+    details.add(DetailsData(indicator: 'Ardor', value: ardour!));
+    details.add(DetailsData(indicator: 'Dispareunia', value: dyspareunia!));
   }
-  /* } */
 }

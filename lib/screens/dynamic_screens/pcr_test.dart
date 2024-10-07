@@ -1,6 +1,7 @@
 import 'package:app/models/pcr.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
+import 'package:app/widgets/error_snackbar.dart';
 import 'package:app/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,9 +17,7 @@ class PcrTest extends StatefulWidget {
 
 class _PcrTestState extends State<PcrTest> {
   final _formKey = GlobalKey<FormState>();
-  double? _mt1;
-  double? _bvab2;
-  double? _av;
+  Pcr pcrData = Pcr();
 
   void _sendData() {
     if (_formKey.currentState!.validate()) {
@@ -27,21 +26,13 @@ class _PcrTestState extends State<PcrTest> {
         context,
         MaterialPageRoute(
           builder: (context) => Results(
-            pcr: Pcr(
-                megasphaeraType1: _mt1!,
-                bvAssociatedBacterium2: _bvab2!,
-                atopobiumVaginalis: _av!),
+            pcr: pcrData,
           ),
         ),
       );
+      pcrData.details.clear();
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Favor de ingresar todos los datos correctamente'),
-          duration: Duration(seconds: 2),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
+      ErrorSnackbar.show(context);
     }
   }
 
@@ -82,7 +73,7 @@ class _PcrTestState extends State<PcrTest> {
                     return null;
                   },
                   onSaved: (newValue) {
-                    _av = double.parse(newValue!);
+                    pcrData.atopobiumVaginalis = double.parse(newValue!);
                   },
                 ),
                 TextFormField(
@@ -115,7 +106,7 @@ class _PcrTestState extends State<PcrTest> {
                     return null;
                   },
                   onSaved: (newValue) {
-                    _mt1 = double.parse(newValue!);
+                    pcrData.megasphaeraType1 = double.parse(newValue!);
                   },
                 ),
                 TextFormField(
@@ -133,7 +124,7 @@ class _PcrTestState extends State<PcrTest> {
                     return null;
                   },
                   onSaved: (newValue) {
-                    _bvab2 = double.parse(newValue!);
+                    pcrData.bvAssociatedBacterium2 = double.parse(newValue!);
                   },
                 ),
                 TextFormField(

@@ -1,6 +1,8 @@
 import 'package:app/models/symptoms.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
 import 'package:app/widgets/custom_appbar.dart';
+import 'package:app/widgets/error_snackbar.dart';
+import 'package:app/widgets/formfield_radio.dart';
 import 'package:app/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,22 +25,17 @@ class _SymptomsTestState extends State<SymptomsTest> {
         context,
         MaterialPageRoute(
           builder: (context) => Results(
-            symptoms: Symptoms(
-                stink: _stink!, dyspareunia: _dyspareunia!, ardour: _ardour!),
+            symptoms: symptomsData,
           ),
         ),
       );
+      symptomsData.details.clear();
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Favor de ingresar todos los datos correctamente'),
-          duration: Duration(seconds: 2),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
+      ErrorSnackbar.show(context);
     }
   }
 
+  Symptoms symptomsData = Symptoms();
   String? _douches;
   String? _hypercholeteremia;
   String? _hypertension;
@@ -48,10 +45,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
   String? _itching;
   String? _irritation;
   String? _discharge;
-  String? _stink;
   String? _pain;
-  String? _ardour;
-  String? _dyspareunia;
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +110,6 @@ class _SymptomsTestState extends State<SymptomsTest> {
                         value.isEmpty ||
                         int.tryParse(value) == null ||
                         int.tryParse(value)! < 0) {
-                      //Hablarlo con los demás y el maestro. Aseguramiento total de todos los datos!!
                       return 'Ingrese un número válido';
                     }
                     return null;
@@ -183,761 +176,143 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   },
                 ),
                 const SizedBox(height: 10),
-                FormField<String>(
-                  validator: (value) {
-                    if (_douches == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Lavados vafinales',
+                  groupValue: _douches,
+                  onChanged: (value) {
+                    setState(() {
+                      _douches = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Lavados vaginales'),
-                          const Spacer(),
-                          Column(
-                            children: [
-                              const Text('Sí'),
-                              Radio<String>(
-                                value: 'Verdadero',
-                                groupValue: _douches,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _douches = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              const Text('No'),
-                              Radio<String>(
-                                value: 'Falso',
-                                groupValue: _douches,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _douches = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                          /* Column(
-                            children: [
-                              const Text('No sé'),
-                              Radio<String>(
-                                value: 'dont_know',
-                                groupValue: _douches,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _douches = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  header1: 'Sí',
+                  header2: 'No',
                 ),
                 Text(
                   'Padecimientos',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 20),
-                FormField<String>(
-                  validator: (value) {
-                    if (_hypercholeteremia == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Hipercoleteremia',
+                  groupValue: _hypercholeteremia,
+                  onChanged: (value) {
+                    setState(() {
+                      _hypercholeteremia = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Hipercoleteremia'),
-                          const Spacer(),
-                          Column(
-                            children: [
-                              const Text('Sí'),
-                              Radio<String>(
-                                value: 'Verdadero',
-                                groupValue: _hypercholeteremia,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _hypercholeteremia = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              const Text('No'),
-                              Radio<String>(
-                                value: 'Falso',
-                                groupValue: _hypercholeteremia,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _hypercholeteremia = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              const Text('No sé'),
-                              Radio<String>(
-                                value: 'Inseguro',
-                                groupValue: _hypercholeteremia,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _hypercholeteremia = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  header1: 'Sí',
+                  header2: 'No',
+                  header3: 'No sé',
+                  extra: true,
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_hypertension == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Hipertensión',
+                  groupValue: _hypertension,
+                  onChanged: (value) {
+                    setState(() {
+                      _hypertension = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Hipertensión'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _hypertension,
-                            onChanged: (value) {
-                              setState(() {
-                                _hypertension = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _hypertension,
-                            onChanged: (value) {
-                              setState(() {
-                                _hypertension = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Inseguro',
-                            groupValue: _hypertension,
-                            onChanged: (value) {
-                              setState(() {
-                                _hypertension = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  extra: true,
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_hypothyroidism == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Hipotiroidismo',
+                  groupValue: _hypothyroidism,
+                  onChanged: (value) {
+                    setState(() {
+                      _hypothyroidism = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Hipotiroidismo'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _hypothyroidism,
-                            onChanged: (value) {
-                              setState(() {
-                                _hypothyroidism = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _hypothyroidism,
-                            onChanged: (value) {
-                              setState(() {
-                                _hypothyroidism = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Inseguro',
-                            groupValue: _hypothyroidism,
-                            onChanged: (value) {
-                              setState(() {
-                                _hypothyroidism = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  extra: true,
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_hyperthyroidism == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Hipertiroidismo',
+                  groupValue: _hyperthyroidism,
+                  onChanged: (value) {
+                    setState(() {
+                      _hyperthyroidism = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Hipertiroidismo'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _hyperthyroidism,
-                            onChanged: (value) {
-                              setState(() {
-                                _hyperthyroidism = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _hyperthyroidism,
-                            onChanged: (value) {
-                              setState(() {
-                                _hyperthyroidism = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Inseguro',
-                            groupValue: _hyperthyroidism,
-                            onChanged: (value) {
-                              setState(() {
-                                _hyperthyroidism = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  extra: true,
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_std == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'EST',
+                  groupValue: _std,
+                  onChanged: (value) {
+                    setState(() {
+                      _std = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('EST'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _std,
-                            onChanged: (value) {
-                              setState(() {
-                                _std = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _std,
-                            onChanged: (value) {
-                              setState(() {
-                                _std = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Inseguro',
-                            groupValue: _std,
-                            onChanged: (value) {
-                              setState(() {
-                                _std = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  extra: true,
                 ),
                 Text(
                   'Síntomas',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_itching == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Comezón Genital',
+                  groupValue: _itching,
+                  onChanged: (value) {
+                    setState(() {
+                      _itching = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Comezón Genital'),
-                          const Spacer(),
-                          Column(
-                            children: [
-                              const Text('Sí'),
-                              Radio<String>(
-                                value: 'Verdadero',
-                                groupValue: _itching,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _itching = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              const Text('No'),
-                              Radio<String>(
-                                value: 'Falso',
-                                groupValue: _itching,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _itching = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ),
-                          /* Column(
-                            children: [
-                              const Text('No sé'),
-                              Radio<String>(
-                                value: 'dont_know',
-                                groupValue: _itching,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _itching = value;
-                                    state.didChange(value);
-                                  });
-                                },
-                              )
-                            ],
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                  header1: 'Sí',
+                  header2: 'No',
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_irritation == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Irritación',
+                  groupValue: _irritation,
+                  onChanged: (value) {
+                    setState(() {
+                      _irritation = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Irritación'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _irritation,
-                            onChanged: (value) {
-                              setState(() {
-                                _irritation = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _irritation,
-                            onChanged: (value) {
-                              setState(() {
-                                _irritation = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          /* Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _irritation,
-                            onChanged: (value) {
-                              setState(() {
-                                _irritation = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_discharge == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Flujo Vaginal',
+                  groupValue: _discharge,
+                  onChanged: (value) {
+                    setState(() {
+                      _discharge = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Flujo Vaginal'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _discharge,
-                            onChanged: (value) {
-                              setState(() {
-                                _discharge = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _discharge,
-                            onChanged: (value) {
-                              setState(() {
-                                _discharge = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          /* Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _discharge,
-                            onChanged: (value) {
-                              setState(() {
-                                _discharge = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_stink == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Mal olor',
+                  groupValue: symptomsData.stink,
+                  onChanged: (value) {
+                    setState(() {
+                      symptomsData.stink = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Mal Olor'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _stink,
-                            onChanged: (value) {
-                              setState(() {
-                                _stink = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _stink,
-                            onChanged: (value) {
-                              setState(() {
-                                _stink = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          /*  Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _stink,
-                            onChanged: (value) {
-                              setState(() {
-                                _stink = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_pain == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Dolor',
+                  groupValue: _pain,
+                  onChanged: (value) {
+                    setState(() {
+                      _pain = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Dolor'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _pain,
-                            onChanged: (value) {
-                              setState(() {
-                                _pain = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _pain,
-                            onChanged: (value) {
-                              setState(() {
-                                _pain = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          /* Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _pain,
-                            onChanged: (value) {
-                              setState(() {
-                                _pain = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_ardour == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Ardor',
+                  groupValue: symptomsData.ardour,
+                  onChanged: (value) {
+                    setState(() {
+                      symptomsData.ardour = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Ardor'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _ardour,
-                            onChanged: (value) {
-                              setState(() {
-                                _ardour = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _ardour,
-                            onChanged: (value) {
-                              setState(() {
-                                _ardour = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          /* Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _ardour,
-                            onChanged: (value) {
-                              setState(() {
-                                _ardour = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
                 ),
-                FormField<String>(
-                  validator: (value) {
-                    if (_dyspareunia == null) {
-                      return "Seleccione una opción";
-                    }
-                    return null;
+                FormfieldRadio(
+                  title: 'Dispareunia (Dolor en las relaciones)',
+                  groupValue: symptomsData.dyspareunia,
+                  onChanged: (value) {
+                    setState(() {
+                      symptomsData.dyspareunia = value;
+                    });
                   },
-                  builder: (FormFieldState<String> state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        children: [
-                          const Text('Dispareunia (Dolor en relaciones)'),
-                          const Spacer(),
-                          Radio<String>(
-                            value: 'Verdadero',
-                            groupValue: _dyspareunia,
-                            onChanged: (value) {
-                              setState(() {
-                                _dyspareunia = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          Radio<String>(
-                            value: 'Falso',
-                            groupValue: _dyspareunia,
-                            onChanged: (value) {
-                              setState(() {
-                                _dyspareunia = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ),
-                          /* Radio<String>(
-                            value: 'dont_know',
-                            groupValue: _dyspareunia,
-                            onChanged: (value) {
-                              setState(() {
-                                _dyspareunia = value;
-                                state.didChange(value);
-                              });
-                            },
-                          ), */
-                        ],
-                      ),
-                      if (state.hasError) // Muestra el error si lo hay
-                        Text(
-                          state.errorText ?? '',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
                 ),
                 SendButton(
                   text: 'ENVIAR',
