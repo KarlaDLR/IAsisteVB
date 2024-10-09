@@ -7,7 +7,6 @@ import 'package:app/widgets/formfield_radio.dart';
 import 'package:app/widgets/integer_input.dart';
 import 'package:app/widgets/send_button.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SymptomsTest extends StatefulWidget {
   const SymptomsTest({super.key});
