@@ -2,7 +2,7 @@ import 'package:app/models/details_data.dart';
 import 'package:app/models/exudate.dart';
 import 'package:app/models/pcr.dart';
 import 'package:app/models/symptoms.dart';
-import 'package:app/widgets/custom_appbar.dart';
+import 'package:app/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class Results extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:app/models/exudate.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
-import 'package:app/widgets/custom_appbar.dart';
-import 'package:app/widgets/error_snackbar.dart';
+import 'package:app/components/custom_appbar.dart';
+import 'package:app/components/error_snackbar.dart';
 import 'package:app/widgets/formfield_radio.dart';
 import 'package:app/widgets/send_button.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +21,7 @@ class _ExudateTestState extends State<ExudateTest> {
   String? _ct;
   String? _hsv;
   String? _mg;
-  //String? _mh;
   String? _up;
-  //String? _uu;
-  //String? _ca;
   String? _tv;
   String? _sa;
   String? _hpv;
@@ -66,7 +63,7 @@ class _ExudateTestState extends State<ExudateTest> {
         child: Scrollbar(
           child: SingleChildScrollView(
             controller: ScrollController(),
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column(
               children: [
                 Text(
@@ -173,8 +170,8 @@ class _ExudateTestState extends State<ExudateTest> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: acronyms.map(
-                        (item) {
-                          return Text(item);
+                        (acronym) {
+                          return Text(acronym);
                         },
                       ).toList(),
                     ),

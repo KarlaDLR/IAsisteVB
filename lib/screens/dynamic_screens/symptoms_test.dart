@@ -1,8 +1,10 @@
 import 'package:app/models/symptoms.dart';
 import 'package:app/screens/dynamic_screens/results.dart';
-import 'package:app/widgets/custom_appbar.dart';
-import 'package:app/widgets/error_snackbar.dart';
+import 'package:app/components/custom_appbar.dart';
+import 'package:app/components/error_snackbar.dart';
+import 'package:app/widgets/custom_input_validator.dart';
 import 'package:app/widgets/formfield_radio.dart';
+import 'package:app/widgets/integer_input.dart';
 import 'package:app/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -56,7 +58,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
         child: Scrollbar(
           child: SingleChildScrollView(
             controller: ScrollController(),
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column(
               children: [
                 Text(
@@ -68,113 +70,34 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   'Información general',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Edad'),
-                  ),
-                  style: GoogleFonts.inter(),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! <= 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Estatura'),
+                CustomInputValidator(
+                    label: 'Edad',
+                    validator: (value) {
+                      if (value == null ||
+                          value.isEmpty ||
+                          int.tryParse(value) == null ||
+                          int.tryParse(value)! <= 0) {
+                        return 'Ingrese un número válido';
+                      }
+                      return null;
+                    }),
+                CustomInputValidator(
+                    label: 'Estatura',
                     hintText: 'cm',
-                  ),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! <= 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Edad de inicio sexual'),
-                  ),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! < 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Semanas de gestación'),
-                  ),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! < 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Número de embarazos'),
-                  ),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! < 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Número de hijos'),
-                  ),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! < 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text('Número de abortos'),
-                  ),
-                  validator: (value) {
-                    if (value == null ||
-                        value.isEmpty ||
-                        int.tryParse(value) == null ||
-                        int.tryParse(value)! < 0) {
-                      return 'Ingrese un número válido';
-                    }
-                    return null;
-                  },
-                ),
+                    validator: (value) {
+                      if (value == null ||
+                          value.isEmpty ||
+                          int.tryParse(value) == null ||
+                          int.tryParse(value)! <= 0) {
+                        return 'Ingrese un número válido';
+                      }
+                      return null;
+                    }),
+                const IntegerInput(label: 'Edad de inicio sexual'),
+                const IntegerInput(label: 'Semanas de gestación'),
+                const IntegerInput(label: 'Número de embarazos'),
+                const IntegerInput(label: 'Número de hijos'),
+                const IntegerInput(label: 'Número de abortos'),
                 const SizedBox(height: 10),
                 FormfieldRadio(
                   title: 'Lavados vafinales',
