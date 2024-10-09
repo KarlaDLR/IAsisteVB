@@ -21,7 +21,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
   final _formKey = GlobalKey<FormState>();
   void _sendData() {
     if (_formKey.currentState!.validate()) {
-      //_formKey.currentState!.save(); Usar método onSave() para los otros campos TextField
+      //_formKey.currentState!.save(); //Usar método onSave() para los otros campos TextField
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -99,7 +99,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 const IntegerInput(label: 'Número de abortos'),
                 const SizedBox(height: 10),
                 FormfieldRadio(
-                  title: 'Lavados vafinales',
+                  title: 'Lavados vaginales',
                   groupValue: _douches,
                   onChanged: (value) {
                     setState(() {

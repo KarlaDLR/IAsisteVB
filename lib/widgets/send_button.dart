@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Widget para el proceso de validación y envío de datos.
+
 class SendButton extends StatelessWidget {
   const SendButton({
     super.key,

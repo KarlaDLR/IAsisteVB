@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Widget de entrada general para proceso de validación personalizada
+
 class CustomInputValidator extends StatelessWidget {
   const CustomInputValidator(
       {super.key,

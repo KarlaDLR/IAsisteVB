@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Widget de entrada de enteros, diseñado para algunos valores de Symptoms.
+
 class IntegerInput extends StatelessWidget {
   const IntegerInput({
     super.key,

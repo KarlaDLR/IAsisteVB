@@ -48,12 +48,13 @@ class _ResultsState extends State<Results> {
         details = widget.pcr!.details;
       }
     }
-    if (result == '') {
+    //Posible código innecesario dado a que ya no se tendrían valores relevantes faltantes
+/*     if (result == '') {
       details.add(DetailsData(
           indicator: '',
           value:
               'Se recomienda realizar más pruebas para obtener más información y ofrecer mayor precisión.'));
-    }
+    } */
   }
 
   @override
@@ -92,23 +93,24 @@ class _ResultsState extends State<Results> {
                   child: ListView.builder(
                     itemCount: details.length,
                     itemBuilder: (context, index) {
-                      if (details[index].indicator != '') {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 5, horizontal: 40),
-                          child: Row(
-                            children: [
-                              Text(details[index].indicator),
-                              const Spacer(),
-                              Text(details[index].value),
-                            ],
-                          ),
-                        );
-                      }
+                      //<------- Las siguientes líneas comentadas están relacionadas con el comentario anterior
+                      /*  if (details[index].indicator != '') { */
                       return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 40),
+                        child: Row(
+                          children: [
+                            Text(details[index].indicator),
+                            const Spacer(),
+                            Text(details[index].value),
+                          ],
+                        ),
+                      );
+                      /* } */
+                      /*  return Padding(
                         padding: const EdgeInsets.all(10),
                         child: Text(details[index].value),
-                      );
+                      ); */
                     },
                   ),
                 ),

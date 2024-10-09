@@ -14,10 +14,6 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('IAsisteVB'),
-      // ),
-
       body: SafeArea(
         child: Center(
           child: Scrollbar(
@@ -25,7 +21,6 @@ class MainMenu extends StatelessWidget {
               controller: ScrollController(),
               padding: const EdgeInsets.all(10),
               child: Column(
-                //mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset('assets/images/IAsisteVB.png', width: 200),
                   const SizedBox(height: 30),
@@ -76,7 +71,7 @@ class MainMenu extends StatelessWidget {
                   const SizedBox(height: 10),
                   const ScreenButton(
                     text: 'Modo de uso',
-                    screen: HowToUse(), //Change Screen!!
+                    screen: HowToUse(),
                   ),
                   const SizedBox(height: 10),
                   const ScreenButton(

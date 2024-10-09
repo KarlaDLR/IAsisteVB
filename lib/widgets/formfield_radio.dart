@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Widget para la generación de grupos de Radiobuttons.
+
 class FormfieldRadio extends StatelessWidget {
   const FormfieldRadio({
     super.key,

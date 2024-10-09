@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Widget para valores decimales, diseñado para los valores y validación de PCR
+
 class DecimalInput extends StatelessWidget {
   const DecimalInput({
     super.key,

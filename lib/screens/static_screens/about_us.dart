@@ -58,7 +58,6 @@ class AboutUs extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 10),
-              //Verificar alineación
               const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Widget que envía a la ventana especificada. Éste es responsivo al tamaño de pantalla.
+
 class ScreenButton extends StatelessWidget {
   const ScreenButton({
     super.key,

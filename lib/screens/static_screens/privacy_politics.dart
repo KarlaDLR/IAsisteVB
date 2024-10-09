@@ -14,7 +14,6 @@ class PrivacyPolitics extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Center(
             child: Column(
-              //mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Políticas de privacidad',

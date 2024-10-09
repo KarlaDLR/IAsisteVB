@@ -1,6 +1,8 @@
 import 'package:app/screens/static_screens/main_menu.dart';
 import 'package:flutter/material.dart';
 
+//Barra de la aplicación de IAsisteVB. Maneja el aspecto de navegación entre ventanas.
+
 class CustomAppbar {
   static AppBar build(BuildContext context) {
     return AppBar(
@@ -23,7 +25,8 @@ class CustomAppbar {
             ),
             (Route<dynamic> route) => false,
           );
-          //Manda al menú principal pero guarda todas las ventanas en el stack
+          // Posible eliminación pronto! ---->
+          //Manda al menú principal pero guarda todas las ventanas en el stack.
           /* Navigator.push(
             context,
             MaterialPageRoute(
