@@ -24,7 +24,7 @@ class AboutUs extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const Text(
-                'Desarrollar soluciones tecnológicas avanzadas que utilicen inteligencia artificial y aprendizaje automático para mejorar el diagnóstico temprano y preciso de la Vaginosis Bacteriana, proporcionando a los médicos y especialistas en ginecología apoyo por medio de herramientas eficaces que promuevan la inclusión y equidad en la atención médica.',
+                'Desarrollar herramientas tecnológicas de vanguardia que asistan a los profesionales de la salud en decisiones críticas, mejorando la precisión diagnóstica en la medicina y contribuyendo al bienestar de las pacientes mediante inteligencia artificial y aprendizaje automático.',
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
@@ -34,7 +34,7 @@ class AboutUs extends StatelessWidget {
                 textAlign: TextAlign.justify,
               ),
               const Text(
-                'Ser líderes en la innovación tecnológica dentro del sector salud, ofreciendo aplicaciones móviles que faciliten el diagnóstico médico y mejoren la calidad de vida de los pacientes. Aspiramos a expandir nuestras soluciones a otras áreas médicas, contribuyendo al avance de la medicina con tecnologías disruptivas de la industria 4.0.',
+                'Ser líderes en soluciones tecnológicas para la salud femenina, estableciendo nuevos estándares en el diagnóstico y tratamiento de la Vaginosis Bacteriana y expandiendo nuestras capacidades a otras patologías relevantes.',
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 20),
@@ -49,7 +49,7 @@ class AboutUs extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               const Text(
-                ' Desarrollar una aplicación móvil Android que, utilizando técnicas de inteligencia artificial, mejore el diagnóstico médico temprano de la Vaginosis Bacteriana y proporcione información y acompañamiento a pacientes biológicamente femeninos y sexualmente activos.',
+                'Desarrollar una aplicación móvil Android y iOS que, utilizando técnicas de inteligencia artificial, explote modelos de aprendizaje automático para mejorar el diagnóstico médico temprano de la Vaginosis Bacteriana y dar explicación, acompañamiento e información referente a la enfermedad a pacientes biológicamente femeninos infectados y sexualmente activos.',
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
@@ -68,7 +68,7 @@ class AboutUs extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Diseñar una interfaz de usuario intuitiva y fácil de usar.',
+                      'Diseñar una interfaz de usuario fácil de usar para la aplicación móvil en una aplicación de prototipado.',
                       textAlign: TextAlign.justify,
                     ),
                   ),
@@ -84,7 +84,7 @@ class AboutUs extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Identificar y seleccionar biomarcadores relevantes asociados con la enfermedad.',
+                      'Identificar y seleccionar biomarcadores relevantes que puedan estar asociados con la condición.',
                       textAlign: TextAlign.justify,
                     ),
                   ),
@@ -100,7 +100,7 @@ class AboutUs extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Entrenar modelos predictivos utilizando datos históricos para predecir la presencia de Vaginosis Bacteriana.',
+                      'Entrenar el modelo utilizando datos históricos para predecir la presencia de Vaginosis Bacteriana en nuevos pacientes. ',
                       textAlign: TextAlign.justify,
                     ),
                   ),
@@ -116,7 +116,7 @@ class AboutUs extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Integrar inteligencia artificial en la aplicación móvil para mejorar el diagnóstico médico.',
+                      'Desarrollar la aplicación móvil con la integración de inteligencia artificial para el mejoramiento del diagnóstico.',
                       textAlign: TextAlign.justify,
                     ),
                   ),
@@ -152,11 +152,13 @@ class AboutUs extends StatelessWidget {
               ),
               const Text(
                 'Promovemos la equidad en la atención médica.',
+                textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 10),
               Text(
                 'Seguridad:',
                 style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.justify,
               ),
               const Text(
                 'Garantizamos la protección de los datos y la privacidad de nuestros usuarios.',

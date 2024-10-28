@@ -20,7 +20,7 @@ class PrivacyPolitics extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 const SizedBox(height: 15),
-                Text(
+                /* Text(
                   'Recopilación de datos:',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
@@ -28,7 +28,7 @@ class PrivacyPolitics extends StatelessWidget {
                   'Esta aplicación recopila datos específicos como síntomas, antecedentes médicos y edad. Estos datos son necesarios para alimentar nuestro modelo de Inteligencia Artificial que proporciona una probabilidad de padecimiento de la enfermedad.\nAdemás, los médicos deben ingresar su cédula profesional al iniciar la app por primera vez para validar su identidad y evitar la automedicación o autodiagnóstico.',
                   textAlign: TextAlign.justify,
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 15), */
                 Text(
                   'Uso de datos:',
                   style: Theme.of(context).textTheme.titleLarge,
