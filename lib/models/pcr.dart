@@ -1,4 +1,4 @@
-import 'package:app/models/details_data.dart';
+import 'package:iasistevb/models/details_data.dart';
 
 class Pcr {
   Pcr({

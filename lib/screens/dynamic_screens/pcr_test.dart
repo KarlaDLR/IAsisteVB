@@ -1,9 +1,9 @@
-import 'package:app/models/pcr.dart';
-import 'package:app/screens/dynamic_screens/results.dart';
-import 'package:app/components/custom_appbar.dart';
-import 'package:app/components/error_snackbar.dart';
-import 'package:app/widgets/decimal_input.dart';
-import 'package:app/widgets/send_button.dart';
+import 'package:iasistevb/models/pcr.dart';
+import 'package:iasistevb/screens/dynamic_screens/results.dart';
+import 'package:iasistevb/components/custom_appbar.dart';
+import 'package:iasistevb/components/error_snackbar.dart';
+import 'package:iasistevb/widgets/decimal_input.dart';
+import 'package:iasistevb/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 
 class PcrTest extends StatefulWidget {

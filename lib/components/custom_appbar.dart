@@ -1,4 +1,4 @@
-import 'package:app/screens/static_screens/main_menu.dart';
+import 'package:iasistevb/screens/static_screens/main_menu.dart';
 import 'package:flutter/material.dart';
 
 //Barra de la aplicación de IAsisteVB. Maneja el aspecto de navegación entre ventanas.

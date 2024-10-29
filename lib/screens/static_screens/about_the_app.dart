@@ -1,4 +1,4 @@
-import 'package:app/components/custom_appbar.dart';
+import 'package:iasistevb/components/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class AboutTheApp extends StatelessWidget {

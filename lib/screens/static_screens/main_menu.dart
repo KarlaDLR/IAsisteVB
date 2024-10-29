@@ -1,12 +1,12 @@
-import 'package:app/screens/static_screens/about_the_app.dart';
-import 'package:app/screens/static_screens/about_us.dart';
-import 'package:app/screens/dynamic_screens/exudate_test.dart';
-import 'package:app/screens/static_screens/how_to_use.dart';
-import 'package:app/screens/dynamic_screens/pcr_test.dart';
-import 'package:app/screens/static_screens/privacy_politics.dart';
-import 'package:app/screens/dynamic_screens/symptoms_test.dart';
+import 'package:iasistevb/screens/static_screens/about_the_app.dart';
+import 'package:iasistevb/screens/static_screens/about_us.dart';
+import 'package:iasistevb/screens/dynamic_screens/exudate_test.dart';
+import 'package:iasistevb/screens/static_screens/how_to_use.dart';
+import 'package:iasistevb/screens/dynamic_screens/pcr_test.dart';
+import 'package:iasistevb/screens/static_screens/privacy_politics.dart';
+import 'package:iasistevb/screens/dynamic_screens/symptoms_test.dart';
 import 'package:flutter/material.dart';
-import 'package:app/widgets/screen_button.dart';
+import 'package:iasistevb/widgets/screen_button.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({super.key});

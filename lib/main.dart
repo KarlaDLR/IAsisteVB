@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:app/screens/static_screens/main_menu.dart';
+import 'package:iasistevb/screens/static_screens/main_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
