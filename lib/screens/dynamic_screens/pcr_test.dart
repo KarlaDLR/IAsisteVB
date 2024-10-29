@@ -1,7 +1,7 @@
 import 'package:iasistevb/models/pcr.dart';
 import 'package:iasistevb/screens/dynamic_screens/results.dart';
-import 'package:iasistevb/components/custom_appbar.dart';
-import 'package:iasistevb/components/error_snackbar.dart';
+import 'package:iasistevb/components/custom_app_bar.dart';
+import 'package:iasistevb/components/error_snack_bar.dart';
 import 'package:iasistevb/widgets/decimal_input.dart';
 import 'package:iasistevb/widgets/send_button.dart';
 import 'package:flutter/material.dart';
@@ -41,14 +41,14 @@ class _PcrTestState extends State<PcrTest> {
       );
       pcrData.details.clear();
     } else {
-      ErrorSnackbar.show(context);
+      ErrorSnackBar.show(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar.build(context),
+      appBar: CustomAppBar.build(context),
       body: Form(
         key: _formKey,
         child: Scrollbar(

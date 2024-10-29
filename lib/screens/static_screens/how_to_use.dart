@@ -1,4 +1,4 @@
-import 'package:iasistevb/components/custom_appbar.dart';
+import 'package:iasistevb/components/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HowToUse extends StatelessWidget {
@@ -7,7 +7,7 @@ class HowToUse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar.build(context),
+      appBar: CustomAppBar.build(context),
       body: Scrollbar(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),

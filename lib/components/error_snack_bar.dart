@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 //Mensaje que sale en la parte inferior mencionando que hay datos incorrectos
 
-class ErrorSnackbar {
+class ErrorSnackBar {
   static void show(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(

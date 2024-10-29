@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 //Barra de la aplicación de IAsisteVB. Maneja el aspecto de navegación entre ventanas.
 
-class CustomAppbar {
+class CustomAppBar {
   static AppBar build(BuildContext context) {
     return AppBar(
       title: const Text('IAsisteVB'),

@@ -1,8 +1,8 @@
 import 'package:iasistevb/models/exudate.dart';
 import 'package:iasistevb/screens/dynamic_screens/results.dart';
-import 'package:iasistevb/components/custom_appbar.dart';
-import 'package:iasistevb/components/error_snackbar.dart';
-import 'package:iasistevb/widgets/formfield_radio.dart';
+import 'package:iasistevb/components/custom_app_bar.dart';
+import 'package:iasistevb/components/error_snack_bar.dart';
+import 'package:iasistevb/widgets/form_field_radio.dart';
 import 'package:iasistevb/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 
@@ -50,14 +50,14 @@ class _ExudateTestState extends State<ExudateTest> {
       );
       exudateData.details.clear();
     } else {
-      ErrorSnackbar.show(context);
+      ErrorSnackBar.show(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar.build(context),
+      appBar: CustomAppBar.build(context),
       body: Form(
         key: _formKey,
         child: Scrollbar(
@@ -76,7 +76,7 @@ class _ExudateTestState extends State<ExudateTest> {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 20),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Ct',
                   groupValue: _ct,
                   onChanged: (value) {
@@ -87,7 +87,7 @@ class _ExudateTestState extends State<ExudateTest> {
                   header1: 'Sí',
                   header2: 'No',
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'HSV',
                     groupValue: _hsv,
                     onChanged: (value) {
@@ -95,7 +95,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         _hsv = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'Mg',
                     groupValue: _mg,
                     onChanged: (value) {
@@ -103,7 +103,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         _mg = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Mh',
                   groupValue: exudateData.mycoplasmaHominis,
                   onChanged: (value) {
@@ -112,7 +112,7 @@ class _ExudateTestState extends State<ExudateTest> {
                     });
                   },
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'Up',
                     groupValue: _up,
                     onChanged: (value) {
@@ -120,7 +120,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         _up = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'Uu',
                     groupValue: exudateData.ureaplasmaUrealyticum,
                     onChanged: (value) {
@@ -128,7 +128,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         exudateData.ureaplasmaUrealyticum = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'Ca',
                     groupValue: exudateData.candidaAlbicans,
                     onChanged: (value) {
@@ -136,7 +136,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         exudateData.candidaAlbicans = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'Tv',
                     groupValue: _tv,
                     onChanged: (value) {
@@ -144,7 +144,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         _tv = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'Sa',
                     groupValue: _sa,
                     onChanged: (value) {
@@ -152,7 +152,7 @@ class _ExudateTestState extends State<ExudateTest> {
                         _sa = value;
                       });
                     }),
-                FormfieldRadio(
+                FormFieldRadio(
                     title: 'HPV',
                     groupValue: _hpv,
                     onChanged: (value) {

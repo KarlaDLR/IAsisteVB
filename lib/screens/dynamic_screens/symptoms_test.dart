@@ -1,9 +1,9 @@
 import 'package:iasistevb/models/symptoms.dart';
 import 'package:iasistevb/screens/dynamic_screens/results.dart';
-import 'package:iasistevb/components/custom_appbar.dart';
-import 'package:iasistevb/components/error_snackbar.dart';
+import 'package:iasistevb/components/custom_app_bar.dart';
+import 'package:iasistevb/components/error_snack_bar.dart';
 import 'package:iasistevb/widgets/custom_input_validator.dart';
-import 'package:iasistevb/widgets/formfield_radio.dart';
+import 'package:iasistevb/widgets/form_field_radio.dart';
 import 'package:iasistevb/widgets/integer_input.dart';
 import 'package:iasistevb/widgets/send_button.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
       );
       symptomsData.details.clear();
     } else {
-      ErrorSnackbar.show(context);
+      ErrorSnackBar.show(context);
     }
   }
 
@@ -51,7 +51,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar.build(context),
+      appBar: CustomAppBar.build(context),
       body: Form(
         key: _formKey,
         child: Scrollbar(
@@ -98,7 +98,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 const IntegerInput(label: 'Número de hijos'),
                 const IntegerInput(label: 'Número de abortos'),
                 const SizedBox(height: 10),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Lavados vaginales',
                   groupValue: _douches,
                   onChanged: (value) {
@@ -114,7 +114,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 20),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Hipercoleteremia',
                   groupValue: _hypercholeteremia,
                   onChanged: (value) {
@@ -127,7 +127,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   header3: 'No sé',
                   extra: true,
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Hipertensión',
                   groupValue: _hypertension,
                   onChanged: (value) {
@@ -137,7 +137,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   },
                   extra: true,
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Hipotiroidismo',
                   groupValue: _hypothyroidism,
                   onChanged: (value) {
@@ -147,7 +147,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   },
                   extra: true,
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Hipertiroidismo',
                   groupValue: _hyperthyroidism,
                   onChanged: (value) {
@@ -157,7 +157,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   },
                   extra: true,
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'EST',
                   groupValue: _std,
                   onChanged: (value) {
@@ -171,7 +171,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   'Síntomas',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Comezón Genital',
                   groupValue: _itching,
                   onChanged: (value) {
@@ -182,7 +182,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   header1: 'Sí',
                   header2: 'No',
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Irritación',
                   groupValue: _irritation,
                   onChanged: (value) {
@@ -191,7 +191,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     });
                   },
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Flujo Vaginal',
                   groupValue: _discharge,
                   onChanged: (value) {
@@ -200,7 +200,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     });
                   },
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Mal olor',
                   groupValue: symptomsData.stink,
                   onChanged: (value) {
@@ -209,7 +209,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     });
                   },
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Dolor',
                   groupValue: _pain,
                   onChanged: (value) {
@@ -218,7 +218,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     });
                   },
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Ardor',
                   groupValue: symptomsData.ardour,
                   onChanged: (value) {
@@ -227,7 +227,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                     });
                   },
                 ),
-                FormfieldRadio(
+                FormFieldRadio(
                   title: 'Dispareunia (Dolor en las relaciones)',
                   groupValue: symptomsData.dyspareunia,
                   onChanged: (value) {

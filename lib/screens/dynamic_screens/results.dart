@@ -2,7 +2,7 @@ import 'package:iasistevb/models/details_data.dart';
 import 'package:iasistevb/models/exudate.dart';
 import 'package:iasistevb/models/pcr.dart';
 import 'package:iasistevb/models/symptoms.dart';
-import 'package:iasistevb/components/custom_appbar.dart';
+import 'package:iasistevb/components/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class Results extends StatefulWidget {
@@ -61,7 +61,7 @@ class _ResultsState extends State<Results> {
   Widget build(BuildContext context) {
     results;
     return Scaffold(
-      appBar: CustomAppbar.build(context),
+      appBar: CustomAppBar.build(context),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
