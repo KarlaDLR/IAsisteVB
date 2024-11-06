@@ -43,9 +43,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
   String? _hypothyroidism;
   String? _hyperthyroidism;
   String? _std;
-  String? _itching;
-  String? _irritation;
-  String? _discharge;
+  String? _dyspareunia;
   String? _pain;
 
   @override
@@ -173,10 +171,10 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 ),
                 FormFieldRadio(
                   title: 'Comezón Genital',
-                  groupValue: _itching,
+                  groupValue: symptomsData.itching,
                   onChanged: (value) {
                     setState(() {
-                      _itching = value;
+                      symptomsData.itching = value;
                     });
                   },
                   header1: 'Sí',
@@ -184,19 +182,19 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 ),
                 FormFieldRadio(
                   title: 'Irritación',
-                  groupValue: _irritation,
+                  groupValue: symptomsData.irritation,
                   onChanged: (value) {
                     setState(() {
-                      _irritation = value;
+                      symptomsData.irritation = value;
                     });
                   },
                 ),
                 FormFieldRadio(
                   title: 'Flujo Vaginal',
-                  groupValue: _discharge,
+                  groupValue: symptomsData.discharge,
                   onChanged: (value) {
                     setState(() {
-                      _discharge = value;
+                      symptomsData.discharge = value;
                     });
                   },
                 ),
@@ -229,10 +227,10 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 ),
                 FormFieldRadio(
                   title: 'Dispareunia (Dolor en las relaciones)',
-                  groupValue: symptomsData.dyspareunia,
+                  groupValue: _dyspareunia,
                   onChanged: (value) {
                     setState(() {
-                      symptomsData.dyspareunia = value;
+                      _dyspareunia = value;
                     });
                   },
                 ),

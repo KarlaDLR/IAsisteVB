@@ -1,5 +1,5 @@
 import 'package:iasistevb/models/details_data.dart';
-import 'package:iasistevb/models/exudate.dart';
+import 'package:iasistevb/models/blood_pathogens.dart';
 import 'package:iasistevb/models/pcr.dart';
 import 'package:iasistevb/models/symptoms.dart';
 import 'package:iasistevb/components/custom_app_bar.dart';
@@ -14,7 +14,7 @@ class Results extends StatefulWidget {
   });
 
   final Symptoms? symptoms;
-  final Exudate? exudate;
+  final BloodPathogens? exudate;
   final Pcr? pcr;
 
   @override

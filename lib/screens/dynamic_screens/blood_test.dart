@@ -1,4 +1,4 @@
-import 'package:iasistevb/models/exudate.dart';
+import 'package:iasistevb/models/blood_pathogens.dart';
 import 'package:iasistevb/screens/dynamic_screens/results.dart';
 import 'package:iasistevb/components/custom_app_bar.dart';
 import 'package:iasistevb/components/error_snack_bar.dart';
@@ -6,19 +6,20 @@ import 'package:iasistevb/widgets/form_field_radio.dart';
 import 'package:iasistevb/widgets/send_button.dart';
 import 'package:flutter/material.dart';
 
-class ExudateTest extends StatefulWidget {
-  const ExudateTest({super.key});
+class BloodTest extends StatefulWidget {
+  const BloodTest({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _ExudateTestState();
+    return _BloodTestState();
   }
 }
 
-class _ExudateTestState extends State<ExudateTest> {
+class _BloodTestState extends State<BloodTest> {
   final _formKey = GlobalKey<FormState>();
-  Exudate exudateData = Exudate();
+  BloodPathogens exudateData = BloodPathogens();
   String? _ct;
+  String? _ca;
   String? _hsv;
   String? _mg;
   String? _up;
@@ -114,10 +115,10 @@ class _ExudateTestState extends State<ExudateTest> {
                 ),
                 FormFieldRadio(
                     title: 'Up',
-                    groupValue: _up,
+                    groupValue: exudateData.ureaplasmaParvum,
                     onChanged: (value) {
                       setState(() {
-                        _up = value;
+                        exudateData.ureaplasmaParvum = value;
                       });
                     }),
                 FormFieldRadio(
@@ -130,10 +131,10 @@ class _ExudateTestState extends State<ExudateTest> {
                     }),
                 FormFieldRadio(
                     title: 'Ca',
-                    groupValue: exudateData.candidaAlbicans,
+                    groupValue: _ca,
                     onChanged: (value) {
                       setState(() {
-                        exudateData.candidaAlbicans = value;
+                        _ca = value;
                       });
                     }),
                 FormFieldRadio(

@@ -79,12 +79,7 @@ class _PcrTestState extends State<PcrTest> {
                     pcrData.megasphaeraType1 = double.parse(newValue!);
                   },
                 ),
-                DecimalInput(
-                  label: 'BVAB2',
-                  onSaved: (newValue) {
-                    pcrData.bvAssociatedBacterium2 = double.parse(newValue!);
-                  },
-                ),
+                const DecimalInput(label: 'BVAB2'),
                 const DecimalInput(label: 'Lcrispatus'),
                 const DecimalInput(label: 'Liners'),
                 const DecimalInput(label: 'Ljensenii'),

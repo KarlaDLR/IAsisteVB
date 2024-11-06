@@ -1,6 +1,6 @@
 import 'package:iasistevb/screens/static_screens/about_the_app.dart';
 import 'package:iasistevb/screens/static_screens/about_us.dart';
-import 'package:iasistevb/screens/dynamic_screens/exudate_test.dart';
+import 'package:iasistevb/screens/dynamic_screens/blood_test.dart';
 import 'package:iasistevb/screens/static_screens/how_to_use.dart';
 import 'package:iasistevb/screens/dynamic_screens/pcr_test.dart';
 import 'package:iasistevb/screens/static_screens/privacy_politics.dart';
@@ -50,8 +50,8 @@ class MainMenu extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const ScreenButton(
-                    text: 'Realizar Prueba de Exudado',
-                    screen: ExudateTest(),
+                    text: 'Realizar Prueba de Sangre',
+                    screen: BloodTest(),
                   ),
                   const SizedBox(height: 10),
                   const ScreenButton(
