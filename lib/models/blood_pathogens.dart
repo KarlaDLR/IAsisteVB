@@ -16,7 +16,7 @@ class BloodPathogens {
   List<DetailsData> details = [];
 
   int getProbability(int value1, int value2) {
-    probability = ((value1 - value2) / value1 * 100).toInt();
+    probability = ((value1 - value2) / value1 * 100).roundToDouble().toInt();
     return probability;
   }
 
