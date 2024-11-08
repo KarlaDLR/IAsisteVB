@@ -61,6 +61,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                 Text(
                   'Antecedentes y Síntomas',
                   style: Theme.of(context).textTheme.headlineLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
                 Text(

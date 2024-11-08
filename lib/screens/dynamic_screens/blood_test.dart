@@ -22,7 +22,6 @@ class _BloodTestState extends State<BloodTest> {
   String? _ca;
   String? _hsv;
   String? _mg;
-  String? _up;
   String? _tv;
   String? _sa;
   String? _hpv;
@@ -45,7 +44,7 @@ class _BloodTestState extends State<BloodTest> {
         context,
         MaterialPageRoute(
           builder: (context) => Results(
-            exudate: exudateData,
+            blood: exudateData,
           ),
         ),
       );
@@ -68,8 +67,9 @@ class _BloodTestState extends State<BloodTest> {
             child: Column(
               children: [
                 Text(
-                  'Exudado',
+                  'Patógenos en Sangre',
                   style: Theme.of(context).textTheme.headlineLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
                 Text(

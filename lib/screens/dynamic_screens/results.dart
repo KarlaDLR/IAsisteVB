@@ -9,12 +9,12 @@ class Results extends StatefulWidget {
   const Results({
     super.key,
     this.symptoms,
-    this.exudate,
+    this.blood,
     this.pcr,
   });
 
   final Symptoms? symptoms;
-  final BloodPathogens? exudate;
+  final BloodPathogens? blood;
   final Pcr? pcr;
 
   @override
@@ -23,38 +23,29 @@ class Results extends StatefulWidget {
 
 class _ResultsState extends State<Results> {
   String result = '';
-  String probability = '';
+  int probability = 0;
+
   List<DetailsData> details = [];
 
   void get results {
     if (widget.symptoms != null) {
       widget.symptoms!.determiningValues;
       result = widget.symptoms!.result;
-      probability =
-          'PROBABILIDAD ESTIMADA: ${widget.symptoms!.probability.toString()}%';
+      probability = widget.symptoms!.probability;
       details = widget.symptoms!.details;
     } else {
-      if (widget.exudate != null) {
-        widget.exudate!.determiningValues;
-        result = widget.exudate!.result;
-        probability =
-            'PROBABILIDAD ESTIMADA: ${widget.exudate!.probability.toString()}%';
-        details = widget.exudate!.details;
+      if (widget.blood != null) {
+        widget.blood!.determiningValues;
+        result = widget.blood!.result;
+        probability = widget.blood!.probability;
+        details = widget.blood!.details;
       } else {
         widget.pcr!.determiningValues;
         result = widget.pcr!.result;
-        probability =
-            'PROBABILIDAD ESTIMADA: ${widget.pcr!.probability.toString()}%';
+        probability = widget.pcr!.probability;
         details = widget.pcr!.details;
       }
     }
-    //Posible código innecesario dado a que ya no se tendrían valores relevantes faltantes
-/*     if (result == '') {
-      details.add(DetailsData(
-          indicator: '',
-          value:
-              'Se recomienda realizar más pruebas para obtener más información y ofrecer mayor precisión.'));
-    } */
   }
 
   @override
@@ -78,12 +69,12 @@ class _ResultsState extends State<Results> {
               ),
               const SizedBox(height: 5),
               Text(
-                probability,
+                'PROBABILIDAD ESTIMADA: $probability%',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: 15),
               Text(
-                'Explicación del resultado obtenido:',
+                'Indicadores del resultado obtenido:',
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.justify,
               ),
