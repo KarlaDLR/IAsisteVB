@@ -84,8 +84,6 @@ class _ResultsState extends State<Results> {
                   child: ListView.builder(
                     itemCount: details.length,
                     itemBuilder: (context, index) {
-                      //<------- Las siguientes líneas comentadas están relacionadas con el comentario anterior
-                      /*  if (details[index].indicator != '') { */
                       return Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 5, horizontal: 40),
@@ -97,11 +95,6 @@ class _ResultsState extends State<Results> {
                           ],
                         ),
                       );
-                      /* } */
-                      /*  return Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(details[index].value),
-                      ); */
                     },
                   ),
                 ),

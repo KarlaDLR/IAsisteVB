@@ -157,7 +157,7 @@ class _SymptomsTestState extends State<SymptomsTest> {
                   extra: true,
                 ),
                 FormFieldRadio(
-                  title: 'EST',
+                  title: 'ETS',
                   groupValue: _std,
                   onChanged: (value) {
                     setState(() {
